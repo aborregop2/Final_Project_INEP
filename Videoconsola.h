@@ -1,6 +1,10 @@
+#ifndef VIDEOCONSOLA_H
+#define VIDEOCONSOLA_H
+
 #include <iostream>
-#include "PassarellaUsuari.h"
 #include <optional>
+#include "PassarellaUsuari.h"
+
 
 using namespace std;
 
@@ -18,3 +22,5 @@ class Videoconsola {
 
         void iniciaSessio(PassarellaUsuari u);
 };
+
+#endif

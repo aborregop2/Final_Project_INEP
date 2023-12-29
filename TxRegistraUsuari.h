@@ -1,4 +1,6 @@
-#include "PassarellaUsuari.h"
+#ifndef TX_REGISTRA_USUARI_H
+#define TX_REGISTRA_USUARI_H
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -17,3 +19,5 @@ class TxRegistraUsuari{
         void executar();
         
 };
+
+#endif

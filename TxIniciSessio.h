@@ -1,7 +1,7 @@
+#ifndef TX_INICI_SESSIO_H
+#define TX_INICI_SESSIO_H
+
 #include <iostream>
-#include "Videoconsola.h"
-#include "CercadoraUsuari.h"
-#include "PassarellaUsuari.h"
 using namespace std;
 
 class TxIniciSessio{
@@ -14,3 +14,5 @@ class TxIniciSessio{
         ~TxIniciSessio();
         void executar();
 };
+
+#endf

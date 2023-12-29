@@ -1,3 +1,6 @@
+#ifndef PASARELLA_USUARI_H
+#define PASARELLA_USUARI_H
+
 #include <iostream>
 using namespace std;
 #include <pqxx/pqxx>
@@ -18,3 +21,5 @@ class PassarellaUsuari{
         void insereix();
         PassarellaUsuari& operator=(const PassarellaUsuari &p);
 };
+
+#endif
