@@ -5,7 +5,6 @@
 #include <optional>
 #include "PassarellaUsuari.h"
 
-
 using namespace std;
 
 class Videoconsola {
