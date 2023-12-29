@@ -20,7 +20,7 @@ void PassarellaUsuari::insereix()
     }
     catch(const exception &e){
         std::cerr << "Error: " << e.what() << std::endl;
- 		return 1;
+ 	      return 1;
     } 
 }
 

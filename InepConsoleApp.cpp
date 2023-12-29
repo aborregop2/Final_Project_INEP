@@ -1,13 +1,13 @@
 #include <iostream>
 #include <pqxx/pqxx>
 #include "txRegistraUsuari.hpp"
-/*#include "txIniciSessio.hpp"
-#include "txTancaSessio.hpp"
-#include "txConsultaUsuari.hpp"
-#include "txInfoCompres.hpp"
-#include "CtrlModificaUsuari.hpp"
-#include "txEsborraUsuari.hpp"
-*/
+#include "txIniciSessio.hpp"
+//#include "txTancaSessio.hpp"
+//#include "txConsultaUsuari.hpp"
+//#include "txInfoCompres.hpp"
+//#include "CtrlModificaUsuari.hpp"
+//#include "txEsborraUsuari.hpp"
+
 
 using namespace std;
 using namespace pqxx;

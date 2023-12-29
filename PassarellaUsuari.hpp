@@ -14,5 +14,5 @@ class PassarellaUsuari{
         string obteContrasenya();
 
         void insereix();
-        PassarellaUsuari& operator=(const PasarellaUsuari &p);
+        PassarellaUsuari& operator=(const PassarellaUsuari &p);
 };

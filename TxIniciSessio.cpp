@@ -8,7 +8,7 @@ TxIniciSessio::TxIniciSessio(string sU,string cU) : sobrenomU(sU), contrasenyaU(
 void TxIniciSessio::executar() 
 {
     CercadoraUsuari c;
-    PasarellaUsuari u = c.cercaUsuari(sobrenomU);
+    PassarellaUsuari u = c.cercaUsuari(sobrenomU);
 
     string contr = u.obteContrasenya();
     if (contr != contrasenyaU) {

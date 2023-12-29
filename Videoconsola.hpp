@@ -6,9 +6,12 @@ using namespace std;
 
 class Videoconsola {
     private:
-        optional<PasarellaUsuari> usuari;
+        optional<PassarellaUsuari> usuari;
+        Videoconsola();
 
     public:
-        Videoconsola() = delete;
-        static optinal<PassarellaUsuari> obteUsuari();
+        
+        optional<PassarellaUsuari> obteUsuari();
+        static Videoconsola& getInstance();
+        void iniciaSessio(PassarellaUsuari u);
 };
