@@ -1,12 +1,12 @@
 #include <iostream>
 #include <pqxx/pqxx>
-#include "txRegistraUsuari.hpp"
-#include "txIniciSessio.hpp"
-//#include "txTancaSessio.hpp"
-//#include "txConsultaUsuari.hpp"
-//#include "txInfoCompres.hpp"
-//#include "CtrlModificaUsuari.hpp"
-//#include "txEsborraUsuari.hpp"
+#include "txRegistraUsuari.h"
+#include "txIniciSessio.h"
+//#include "txTancaSessio.h"
+//#include "txConsultaUsuari.h"
+//#include "txInfoCompres.h"
+//#include "CtrlModificaUsuari.h"
+//#include "txEsborraUsuari.h"
 
 
 using namespace std;
@@ -41,7 +41,7 @@ int main() {
 				cin >> cU;
 				cout << endl; 
 
-				txIniciSessio txIS(sU, cU);
+				TxIniciSessio txIS(sU, cU);
 				txIS.executar();
 				//sI UsuariNoExisteix o ErrorContrasenya
 				// -> "Hi ha hagut error amb el sobrenom o la contrasenya"
@@ -123,7 +123,7 @@ int main() {
 					cout << " euros gastats en total" << endl; //Hay que poner num de paquets				
 				}
 				else if (opt == 2){
-			
+					string sob, cont, cE;
 					cout << "** Consulta usuari **" << endl;
 					cout << "Nom complet: " << endl; //Hay que poner
 					cout << "Sobrenom: " << endl; //Hay que poner
@@ -154,6 +154,7 @@ int main() {
 					cout << "Data naixement (DD/MM/AAAA): " << endl << endl; //Hay que poner
 				}
 				else if (opt == 3){
+					string cont;
 					cout << "** Esborra usuari **" << endl;
 					cout << "Per confirmar l'esborrat, s'ha d'entrar la contraasenya ..." << endl;
 					cout << "Contrasenya: ";
@@ -207,6 +208,7 @@ int main() {
 					}
 				}
 				else if (opt == 2){
+					string nomV;
 					cout << "** Compra paquet **" << endl;
 					cout << "Nom paquet: ";
 					cin >> nomV;

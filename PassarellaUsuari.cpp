@@ -1,9 +1,17 @@
-#include "PassarellaUsuari.hpp"
+#include "PassarellaUsuari.h"
 #include <pqxx/pqxx>
 
 PassarellaUsuari::PassarellaUsuari(string nU,string sU,string cU,string ceU,string dnU): nom(nU), sobrenom(sU),
                                         contrasenya(cU), correuElectronic(ceU), dataNaixement(dnU)
-{}
+{
+
+}
+
+PassarellaUsuari::~PassarellaUsuari()
+{
+
+}
+
 
 string PassarellaUsuari::obteContrasenya() 
 {

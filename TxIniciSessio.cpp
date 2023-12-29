@@ -1,9 +1,16 @@
-#include "TxIniciSessio.hpp"
-#include "CercadoraUsuari.hpp"
-#include "Videoconsola.hpp"
+#include "TxIniciSessio.h"
+#include "CercadoraUsuari.h"
+#include "Videoconsola.h"
 
 TxIniciSessio::TxIniciSessio(string sU,string cU) : sobrenomU(sU), contrasenyaU(cU)
-{}
+{
+
+}
+
+TxIniciSessio::~TxIniciSessio()
+{
+
+}
 
 void TxIniciSessio::executar() 
 {
@@ -12,7 +19,7 @@ void TxIniciSessio::executar()
 
     string contr = u.obteContrasenya();
     if (contr != contrasenyaU) {
-        //Activar ErrorContrasenya
+        cout << "Joder" << endl;
     }
 
     Videoconsola& v = Videoconsola::getInstance();

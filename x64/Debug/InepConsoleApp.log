@@ -1,9 +1,217 @@
 ﻿  InepConsoleApp.cpp
-C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\InepConsoleApp.cpp(71,4): error C2360: initialization of 'rU' is skipped by 'case' label
-  C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\InepConsoleApp.cpp(67,23):
-  see declaration of 'rU'
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\PassarellaUsuari.h(5,23): error C2011: 'PassarellaUsuari': 'class' type redefinition
+  (compiling source file 'InepConsoleApp.cpp')
+  C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\PassarellaUsuari.h(5,7):
+  see declaration of 'PassarellaUsuari'
   
-C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\InepConsoleApp.cpp(73,4): error C2361: initialization of 'rU' is skipped by 'default' label
-  C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\InepConsoleApp.cpp(67,23):
-  see declaration of 'rU'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xsmf_control.h(152,33): error C2139: 'PassarellaUsuari': an undefined class is not allowed as an argument to compiler intrinsic type trait '__is_trivially_destructible'
+  (compiling source file 'InepConsoleApp.cpp')
+  C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\PassarellaUsuari.h(5,7):
+  see declaration of 'PassarellaUsuari'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xsmf_control.h(152,33):
+  the template instantiation context (the oldest one first) is
+  	C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\Videoconsola.h(9,36):
+  	see reference to class template instantiation 'std::optional<PassarellaUsuari>' being compiled
+  	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\optional(213,26):
+  	see reference to alias template instantiation 'std::_SMF_control<std::_Optional_construct_base<_Ty>,_Ty>' being compiled
+          with
+          [
+              _Ty=PassarellaUsuari
+          ]
+  	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xsmf_control.h(159,22):
+  	see reference to alias template instantiation 'std::_SMF_control_move_assign<std::_Optional_construct_base<_Ty>,_Ty>' being compiled
+          with
+          [
+              _Ty=PassarellaUsuari
+          ]
+  	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xsmf_control.h(152,19):
+  	see reference to variable template 'const bool conjunction_v<std::is_trivially_destructible<PassarellaUsuari>,std::is_trivially_move_constructible<PassarellaUsuari>,std::is_trivially_move_assignable<PassarellaUsuari> >' being compiled
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xsmf_control.h(152,71): error C2139: 'PassarellaUsuari': an undefined class is not allowed as an argument to compiler intrinsic type trait '__is_trivially_constructible'
+  (compiling source file 'InepConsoleApp.cpp')
+  C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\PassarellaUsuari.h(5,7):
+  see declaration of 'PassarellaUsuari'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xsmf_control.h(152,71):
+  the template instantiation context (the oldest one first) is
+  	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xsmf_control.h(117,9):
+  	see reference to alias template instantiation 'std::_SMF_control_move<std::_Optional_construct_base<_Ty>,_Ty>' being compiled
+          with
+          [
+              _Ty=PassarellaUsuari
+          ]
+  	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xsmf_control.h(80,19):
+  	see reference to variable template 'const bool conjunction_v<std::is_trivially_move_constructible<PassarellaUsuari> >' being compiled
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xsmf_control.h(115,71): error C2139: 'PassarellaUsuari': an undefined class is not allowed as an argument to compiler intrinsic type trait '__is_trivially_constructible'
+  (compiling source file 'InepConsoleApp.cpp')
+  C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\PassarellaUsuari.h(5,7):
+  see declaration of 'PassarellaUsuari'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xsmf_control.h(115,71):
+  the template instantiation context (the oldest one first) is
+  	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xsmf_control.h(80,78):
+  	see reference to alias template instantiation 'std::_SMF_control_copy<std::_Optional_construct_base<_Ty>,_Ty>' being compiled
+          with
+          [
+              _Ty=PassarellaUsuari
+          ]
+  	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xsmf_control.h(48,41):
+  	see reference to variable template 'const bool conjunction_v<std::is_trivially_copy_constructible<PassarellaUsuari> >' being compiled
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xsmf_control.h(49,33): error C2139: 'PassarellaUsuari': an undefined class is not allowed as an argument to compiler intrinsic type trait '__is_constructible'
+  (compiling source file 'InepConsoleApp.cpp')
+  C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\PassarellaUsuari.h(5,7):
+  see declaration of 'PassarellaUsuari'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xsmf_control.h(49,33):
+  the template instantiation context (the oldest one first) is
+  	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xsmf_control.h(49,19):
+  	see reference to variable template 'const bool conjunction_v<std::is_copy_constructible<PassarellaUsuari> >' being compiled
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xsmf_control.h(81,37): error C2139: 'PassarellaUsuari': an undefined class is not allowed as an argument to compiler intrinsic type trait '__is_constructible'
+  (compiling source file 'InepConsoleApp.cpp')
+  C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\PassarellaUsuari.h(5,7):
+  see declaration of 'PassarellaUsuari'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xsmf_control.h(81,37):
+  the template instantiation context (the oldest one first) is
+  	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xsmf_control.h(81,23):
+  	see reference to variable template 'const bool conjunction_v<std::is_move_constructible<PassarellaUsuari> >' being compiled
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\type_traits(933,28): error C2139: 'PassarellaUsuari': an undefined class is not allowed as an argument to compiler intrinsic type trait '__is_trivially_destructible'
+  (compiling source file 'InepConsoleApp.cpp')
+  C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\PassarellaUsuari.h(5,7):
+  see declaration of 'PassarellaUsuari'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\type_traits(933,28):
+  the template instantiation context (the oldest one first) is
+  	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\optional(213,26):
+  	see reference to class template instantiation 'std::_Deleted_move_assign<std::_Optional_construct_base<_Ty>,_Ty>' being compiled
+          with
+          [
+              _Ty=PassarellaUsuari
+          ]
+  	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xsmf_control.h(139,31):
+  	see reference to class template instantiation 'std::_Deleted_copy_assign<std::_Optional_construct_base<_Ty>,_Ty>' being compiled
+          with
+          [
+              _Ty=PassarellaUsuari
+          ]
+  	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xsmf_control.h(102,31):
+  	see reference to class template instantiation 'std::_Deleted_move<std::_Optional_construct_base<_Ty>,_Ty>' being compiled
+          with
+          [
+              _Ty=PassarellaUsuari
+          ]
+  	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xsmf_control.h(67,24):
+  	see reference to class template instantiation 'std::_Deleted_copy<std::_Optional_construct_base<_Ty>>' being compiled
+          with
+          [
+              _Ty=PassarellaUsuari
+          ]
+  	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xsmf_control.h(37,24):
+  	see reference to class template instantiation 'std::_Optional_construct_base<_Ty>' being compiled
+          with
+          [
+              _Ty=PassarellaUsuari
+          ]
+  	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\optional(69,29):
+  	see reference to variable template 'const bool is_trivially_destructible_v<PassarellaUsuari>' being compiled
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\optional(100,26): error C2079: 'std::_Optional_destruct_base<_Ty,false>::_Value' uses undefined class 'PassarellaUsuari'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\optional(100,26): error C2079:         with
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\optional(100,26): error C2079:         [
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\optional(100,26): error C2079:             _Ty=PassarellaUsuari
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\optional(100,26): error C2079:         ]
+  (compiling source file 'InepConsoleApp.cpp')
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\optional(100,26):
+  the template instantiation context (the oldest one first) is
+  	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\optional(138,35):
+  	see reference to class template instantiation 'std::_Optional_destruct_base<_Ty,false>' being compiled
+          with
+          [
+              _Ty=PassarellaUsuari
+          ]
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\type_traits(865,28): error C2139: 'PassarellaUsuari': an undefined class is not allowed as an argument to compiler intrinsic type trait '__is_destructible'
+  (compiling source file 'InepConsoleApp.cpp')
+  C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\PassarellaUsuari.h(5,7):
+  see declaration of 'PassarellaUsuari'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\type_traits(865,28):
+  the template instantiation context (the oldest one first) is
+  	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\optional(220,39):
+  	see reference to variable template 'const bool is_destructible_v<PassarellaUsuari>' being compiled
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\optional(220,62): error C2338: static_assert failed: 'T in optional<T> must meet the Cpp17Destructible requirements (N4950 [optional.optional.general]/3).'
+  (compiling source file 'InepConsoleApp.cpp')
+  
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\Videoconsola.h(32,14): error C2027: use of undefined type 'PassarellaUsuari'
+  (compiling source file 'InepConsoleApp.cpp')
+  C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\PassarellaUsuari.h(5,7):
+  see declaration of 'PassarellaUsuari'
+  
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\Videoconsola.h(32,44): error C2027: use of undefined type 'PassarellaUsuari'
+  (compiling source file 'InepConsoleApp.cpp')
+  C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\PassarellaUsuari.h(5,7):
+  see declaration of 'PassarellaUsuari'
+  
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\PassarellaUsuari.h(3,17): error C2871: 'std': a namespace with this name does not exist
+  (compiling source file 'InepConsoleApp.cpp')
+  
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\CercadoraUsuari.h(4,17): error C2871: 'std': a namespace with this name does not exist
+  (compiling source file 'InepConsoleApp.cpp')
+  
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\CercadoraUsuari.h(8,26): error C3646: 'cercaUsuari': unknown override specifier
+  (compiling source file 'InepConsoleApp.cpp')
+  
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\CercadoraUsuari.h(8,37): error C2059: syntax error: '('
+  (compiling source file 'InepConsoleApp.cpp')
+  
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\CercadoraUsuari.h(9,9): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+  (compiling source file 'InepConsoleApp.cpp')
+  
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\PassarellaUsuari.h(3,17): error C2871: 'std': a namespace with this name does not exist
+  (compiling source file 'InepConsoleApp.cpp')
+  
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\txIniciSessio.h(5,17): error C2871: 'std': a namespace with this name does not exist
+  (compiling source file 'InepConsoleApp.cpp')
+  
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\txIniciSessio.h(9,16): error C3646: 'sobrenomU': unknown override specifier
+  (compiling source file 'InepConsoleApp.cpp')
+  
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\txIniciSessio.h(9,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'InepConsoleApp.cpp')
+  
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\txIniciSessio.h(10,16): error C3646: 'contrasenyaU': unknown override specifier
+  (compiling source file 'InepConsoleApp.cpp')
+  
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\txIniciSessio.h(10,28): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'InepConsoleApp.cpp')
+  
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\txIniciSessio.h(13,23): error C2061: syntax error: identifier 'string'
+  (compiling source file 'InepConsoleApp.cpp')
+  
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\txIniciSessio.h(13,46): error C2614: 'TxIniciSessio': illegal member initialization: 'sobrenomU' is not a base or member
+  (compiling source file 'InepConsoleApp.cpp')
+  
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\txIniciSessio.h(13,61): error C2614: 'TxIniciSessio': illegal member initialization: 'contrasenyaU' is not a base or member
+  (compiling source file 'InepConsoleApp.cpp')
+  
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\txIniciSessio.h(23,29): error C2146: syntax error: missing ';' before identifier 'c'
+  (compiling source file 'InepConsoleApp.cpp')
+  
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\txIniciSessio.h(24,30): error C2146: syntax error: missing ';' before identifier 'u'
+  (compiling source file 'InepConsoleApp.cpp')
+  
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\txIniciSessio.h(24,48): error C2065: 'sobrenomU': undeclared identifier
+  (compiling source file 'InepConsoleApp.cpp')
+  
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\txIniciSessio.h(26,28): error C2065: 'u': undeclared identifier
+  (compiling source file 'InepConsoleApp.cpp')
+  
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\txIniciSessio.h(27,26): error C2065: 'contrasenyaU': undeclared identifier
+  (compiling source file 'InepConsoleApp.cpp')
+  
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\txIniciSessio.h(32,28): error C2065: 'u': undeclared identifier
+  (compiling source file 'InepConsoleApp.cpp')
+  
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\InepConsoleApp.cpp(44,23): error C2661: 'TxIniciSessio::TxIniciSessio': no overloaded function takes 2 arguments
+  C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\InepConsoleApp.cpp(44,23):
+  while trying to match the argument list '(std::string, std::string)'
   
