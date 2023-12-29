@@ -2,8 +2,8 @@
 #define PASARELLA_USUARI_H
 
 #include <iostream>
-using namespace std;
 #include <pqxx/pqxx>
+using namespace std;
 
 class PassarellaUsuari{
     private:
@@ -15,10 +15,10 @@ class PassarellaUsuari{
         
     public:
         PassarellaUsuari(string nU,string sU,string cU,string ceU,string dnU);
-
-        ~PassarellaUsuari();
+        
         string obteContrasenya();
         void insereix();
+
         PassarellaUsuari& operator=(const PassarellaUsuari &p);
 };
 

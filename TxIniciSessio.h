@@ -11,7 +11,6 @@ class TxIniciSessio{
 
     public:
         TxIniciSessio(string sU,string cU);
-        ~TxIniciSessio();
         void executar();
 };
 

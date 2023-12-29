@@ -15,11 +15,10 @@ class Videoconsola {
     public:
         
         optional<PassarellaUsuari> obteUsuari();
-        ~Videoconsola();
-
         static Videoconsola& getInstance();
 
         void iniciaSessio(PassarellaUsuari u);
+        void tancaSessio();
 };
 
 #endif

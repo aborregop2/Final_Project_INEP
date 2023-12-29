@@ -7,12 +7,6 @@ PassarellaUsuari::PassarellaUsuari(string nU,string sU,string cU,string ceU,stri
 
 }
 
-PassarellaUsuari::~PassarellaUsuari()
-{
-
-}
-
-
 string PassarellaUsuari::obteContrasenya() 
 {
     return contrasenya;

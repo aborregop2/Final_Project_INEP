@@ -15,7 +15,6 @@ class TxRegistraUsuari{
 
     public:
         TxRegistraUsuari(string nU,string sU,string cU,string ceU,string dnU);
-        ~TxRegistraUsuari();
         void executar();
         
 };

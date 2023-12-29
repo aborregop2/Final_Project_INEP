@@ -5,13 +5,6 @@ optional<PassarellaUsuari> Videoconsola::obteUsuari()
     return usuari;
 }
 
-Videoconsola::~Videoconsola()
-{
-
-}
-
-
-
 Videoconsola& Videoconsola::getInstance()
 {
     static Videoconsola instance;
@@ -21,4 +14,9 @@ Videoconsola& Videoconsola::getInstance()
 void Videoconsola::iniciaSessio(PassarellaUsuari u)
 {
     usuari = u;
+}
+
+void Videoconsola::tancaSessio()
+{
+    usuari = nullopt;
 }

@@ -18,6 +18,7 @@ int main() {
 			string c;
 
 		while(true){
+			inici:
 
 			cout << "******************" << endl;
 			cout << "  Menu Principal  " << endl;
@@ -85,7 +86,7 @@ int main() {
 				cin >> opt;
 			} 
 
-
+			menuPrincipal:
 			cout << "******************" << endl;
 			cout << "  Menu Principal  " << endl;
 			cout << "******************" << endl;
@@ -154,13 +155,17 @@ int main() {
 					cout << "Data naixement (DD/MM/AAAA): " << endl << endl; //Hay que poner
 				}
 				else if (opt == 3){
-					string cont;
+					string contraU;
 					cout << "** Esborra usuari **" << endl;
 					cout << "Per confirmar l'esborrat, s'ha d'entrar la contraasenya ..." << endl;
 					cout << "Contrasenya: ";
-					cin >> cont;
-					//Pasan cosas
-					cout << endl << "Usuari esborrat correctament!" << endl;
+					cin >> contraU;
+					
+					TxEsborraUsuari txEU(contraU);
+					txEU.executar();
+					//Error -> "La contrasenya no es correcta l'usuari no s'ha esborrrat"
+					
+					cout << endl << "L'usuari s'ha esborrat correctament!" << endl;
 				}
 				else if (opt == 4){
 					break;
@@ -254,10 +259,22 @@ int main() {
 				break;
 			}
 			else if (opt == 4){
-				break;
+				cout << "** Tancar sessio **" << endl;
+				cout << "Vols tancar sessio (S/N)";
+				cin >> c;
+
+				if (c == "S") {
+					TxTancaSessio txTS;
+					txTS.executar();
+					cout << "Sessio tancada correctament" << endl;
+
+					goto inici;
+				}
+				else goto menuPrincipal;
+				
 			}
 			else if (opt == 5){
-				exit(0);
+				break;
 			}
 			else{
 				cout << "Opcio no valida" << endl;

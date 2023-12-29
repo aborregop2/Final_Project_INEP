@@ -1,6 +1,11 @@
 #include "CercadoraUsuari.h"
 #include <pqxx/pqxx>
 
+CercadoraUsuari::CercadoraUsuari()
+{
+
+}
+
 PasarellaUsuari CercadoraUsuari::cercaUsuari(string sobrenomU) 
 {
     try{

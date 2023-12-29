@@ -7,11 +7,6 @@ TxIniciSessio::TxIniciSessio(string sU,string cU) : sobrenomU(sU), contrasenyaU(
 
 }
 
-TxIniciSessio::~TxIniciSessio()
-{
-
-}
-
 void TxIniciSessio::executar() 
 {
     CercadoraUsuari c;
@@ -19,7 +14,7 @@ void TxIniciSessio::executar()
 
     string contr = u.obteContrasenya();
     if (contr != contrasenyaU) {
-        cout << "Joder" << endl;
+        //Error 
     }
 
     Videoconsola& v = Videoconsola::getInstance();
