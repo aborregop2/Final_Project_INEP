@@ -7,11 +7,6 @@ TxRegistraUsuari::TxRegistraUsuari(string nU,string sU,string cU,string ceU,stri
 
 void TxRegistraUsuari::executar()
 {
-    executarp();
-}
-
-void TxRegistraUsuari::executarp()
-{
     PassarellaUsuari u(nomU, sobrenomU, contrasenyaU, correuElectronicU, dataNaixementU);
     u.insereix();
 }

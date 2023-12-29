@@ -43,7 +43,8 @@ int main() {
 
 				txIniciSessio txIS(sU, cU);
 				txIS.executar();
-
+				//sI UsuariNoExisteix o ErrorContrasenya
+				// -> "Hi ha hagut error amb el sobrenom o la contrasenya"
 				cout << "Sessio iniciada correctament!" << endl << endl;
 				
 			}

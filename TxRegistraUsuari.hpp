@@ -8,8 +8,6 @@ class TxRegistraUsuari{
         string contrasenyaU;
         string correuElectronicU;
         string dataNaixementU;
-        
-        void executarp();
 
     public:
         TxRegistraUsuari(string nU,string sU,string cU,string ceU,string dnU);

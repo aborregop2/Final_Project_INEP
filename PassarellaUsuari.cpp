@@ -3,16 +3,14 @@
 
 PassarellaUsuari::PassarellaUsuari(string nU,string sU,string cU,string ceU,string dnU): nom(nU), sobrenom(sU),
                                         contrasenya(cU), correuElectronic(ceU), dataNaixement(dnU)
-{
+{}
 
+string PassarellaUsuari::obteContrasenya() 
+{
+    return contrasenya;
 }
 
 void PassarellaUsuari::insereix()
-{
-    insereixp();
-}
-
-void PassarellaUsuari::insereixp()
 {
     try{
         pqxx::connection conn("dbname =INEP user =postgres  password =018180 hostaddr =127.0.0.1 port =5432");
@@ -23,5 +21,17 @@ void PassarellaUsuari::insereixp()
     catch(const exception &e){
         std::cerr << "Error: " << e.what() << std::endl;
  		return 1;
-    }    
+    } 
+}
+
+PassarellaUsuari& PasarellaUsuari::operator=(const PasarellaUsuari& p) {
+  if (this != &p) {
+    nom = p.nom;
+    sobrenom = p.sobrenom;
+    contrasenya = p.contrasenya;
+    correuElectronic = p.correuElectronic;
+    dataNaixement = p.dataNaixement;
+  }
+
+  return *this;
 }

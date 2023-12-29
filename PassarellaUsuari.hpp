@@ -9,9 +9,10 @@ class PassarellaUsuari{
         string correuElectronic;
         string dataNaixement;
         
-        void insereixp();
     public:
+        PassarellaUsuari(string nU,string sU,string cU,string ceU,string dnU);
+        string obteContrasenya();
 
-    PassarellaUsuari(string nU,string sU,string cU,string ceU,string dnU);
-    void insereix();
+        void insereix();
+        PassarellaUsuari& operator=(const PasarellaUsuari &p);
 };
