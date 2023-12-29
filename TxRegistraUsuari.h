@@ -12,18 +12,8 @@ class TxRegistraUsuari{
         string dataNaixementU;
 
     public:
-        TxRegistraUsuari(string nU,string sU,string cU,string ceU,string dnU) : nomU(nU), sobrenomU(sU),contrasenyaU(cU), correuElectronicU(ceU), dataNaixementU(dnU)
-        {
-          
-        }
-        ~TxRegistraUsuari()
-        {
-
-        }
-        void executar()
-        {
-            PassarellaUsuari u(nomU, sobrenomU, contrasenyaU, correuElectronicU, dataNaixementU);
-            u.insereix();
-        }  
+        TxRegistraUsuari(string nU,string sU,string cU,string ceU,string dnU);
+        ~TxRegistraUsuari();
+        void executar();
         
 };

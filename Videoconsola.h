@@ -7,30 +7,14 @@ using namespace std;
 class Videoconsola {
     private:
         optional<PassarellaUsuari> usuari;
-        Videoconsola()
-        {
-            
-        }
+        Videoconsola();
 
     public:
         
-        optional<PassarellaUsuari> obteUsuari()
-        {
-            return usuari;
-        }
-        ~Videoconsola()
-        {
+        optional<PassarellaUsuari> obteUsuari();
+        ~Videoconsola();
 
-        }
+        static Videoconsola& getInstance();
 
-        static Videoconsola& getInstance()
-        {
-            static Videoconsola instance;
-            return instance;
-        }
-
-        void iniciaSessio(PassarellaUsuari u)
-        {
-            usuari = u;
-        }
+        void iniciaSessio(PassarellaUsuari u);
 };

@@ -10,25 +10,7 @@ class TxIniciSessio{
         string contrasenyaU;
 
     public:
-        TxIniciSessio(string sU,string cU) : sobrenomU(sU), contrasenyaU(cU)
-        {
-
-        }
-        ~TxIniciSessio()
-        {
-
-        }
-        void executar()
-        {
-            CercadoraUsuari c;
-            PassarellaUsuari u = c.cercaUsuari(sobrenomU);
-
-            string contr = u.obteContrasenya();
-            if (contr != contrasenyaU) {
-                cout << "Joder" << endl;
-            }
-
-            Videoconsola& v = Videoconsola::getInstance();
-            v.iniciaSessio(u); 
-        }
+        TxIniciSessio(string sU,string cU);
+        ~TxIniciSessio();
+        void executar();
 };

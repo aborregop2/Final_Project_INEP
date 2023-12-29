@@ -11,6 +11,7 @@ Videoconsola::~Videoconsola()
 }
 
 
+
 Videoconsola& Videoconsola::getInstance()
 {
     static Videoconsola instance;

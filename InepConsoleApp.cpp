@@ -1,12 +1,12 @@
 #include <iostream>
 #include <pqxx/pqxx>
-#include "txRegistraUsuari.h"
-#include "txIniciSessio.h"
-//#include "txTancaSessio.h"
-//#include "txConsultaUsuari.h"
-//#include "txInfoCompres.h"
+#include "TxRegistraUsuari.h"
+#include "TxIniciSessio.h"
+//#include "TxTancaSessio.h"
+//#include "TxConsultaUsuari.h"
+//#include "TxInfoCompres.h"
 //#include "CtrlModificaUsuari.h"
-//#include "txEsborraUsuari.h"
+//#include "TxEsborraUsuari.h"
 
 
 using namespace std;
