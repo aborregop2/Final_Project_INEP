@@ -1,0 +1,9 @@
+﻿  InepConsoleApp.cpp
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\InepConsoleApp.cpp(71,4): error C2360: initialization of 'rU' is skipped by 'case' label
+  C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\InepConsoleApp.cpp(67,23):
+  see declaration of 'rU'
+  
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\InepConsoleApp.cpp(73,4): error C2361: initialization of 'rU' is skipped by 'default' label
+  C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\InepConsoleApp.cpp(67,23):
+  see declaration of 'rU'
+  
