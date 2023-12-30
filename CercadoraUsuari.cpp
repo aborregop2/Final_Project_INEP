@@ -11,7 +11,7 @@ PasarellaUsuari CercadoraUsuari::cercaUsuari(string sobrenomU)
     try{
         pqxx::connection conn("dbname =INEP user =postgres  password =018180 hostaddr =127.0.0.1 port =5432");
         pqxx::work txn(conn);
-        pqxx::result r = txn.exec("SELECT * FROM public.usuari WHERE sobrenom = '" + sobrenomU + "'");
+        pqxx::result r = txn.exec("SELECT FROM public.usuari WHERE sobrenom = '" + sobrenomU + "'");
         pqxx::row row = r[0];
         
         PassarellaUsuari u;

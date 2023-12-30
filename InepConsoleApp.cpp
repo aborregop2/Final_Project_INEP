@@ -113,6 +113,10 @@ int main() {
 				cin >> opt;
 				
 				if (opt == 1){
+					TxConsultaUsuari txCU;
+					txCU.executar();
+
+					/*
 					cout << "** Consulta usuari **" << endl;
 					cout << "Nom complet: " << endl; //Hay que poner
 					cout << "Sobrenom: " << endl; //Hay que poner
@@ -121,7 +125,10 @@ int main() {
 						
 					cout << " videojocs comprats" << endl; //Hay que poner num de videojocs
 					cout << " paquet de videojocs comprats" << endl; //Hay que poner num de paquets
-					cout << " euros gastats en total" << endl; //Hay que poner num de paquets				
+					cout << " euros gastats en total" << endl; //Hay que poner num de paquets
+					*/	
+
+
 				}
 				else if (opt == 2){
 					string sob, cont, cE;
@@ -157,13 +164,13 @@ int main() {
 				else if (opt == 3){
 					string contraU;
 					cout << "** Esborra usuari **" << endl;
-					cout << "Per confirmar l'esborrat, s'ha d'entrar la contraasenya ..." << endl;
+					cout << "Per confirmar l'esborrat, s'ha d'entrar la contrasenya ..." << endl;
 					cout << "Contrasenya: ";
 					cin >> contraU;
 					
 					TxEsborraUsuari txEU(contraU);
 					txEU.executar();
-					//Error -> "La contrasenya no es correcta l'usuari no s'ha esborrrat"
+					//Error -> "La contrasenya no es correcta l'usuari, no s'ha esborrrat"
 					
 					cout << endl << "L'usuari s'ha esborrat correctament!" << endl;
 				}
