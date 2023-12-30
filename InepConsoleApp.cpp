@@ -2,11 +2,11 @@
 #include <pqxx/pqxx>
 #include "TxRegistraUsuari.h"
 #include "TxIniciSessio.h"
-//#include "TxTancaSessio.h"
-//#include "TxConsultaUsuari.h"
-//#include "TxInfoCompres.h"
-//#include "CtrlModificaUsuari.h"
-//#include "TxEsborraUsuari.h"
+#include "TxTancaSessio.h"
+#include "TxConsultaUsuari.h"
+#include "TxInfoCompres.h"
+#include "CtrlModificaUsuari.h"
+#include "TxEsborraUsuari.h"
 
 
 using namespace std;
@@ -124,7 +124,7 @@ int main() {
 
 					cout << "** Consulta usuari **" << endl;
 					cout << "Nom complet: " << infoUsuari[0] << endl;
-					cout << "Sobrenom: " << infoUsuari[1] << endl
+					cout << "Sobrenom: " << infoUsuari[1] << endl;
 					cout << "Correu electronic: " << infoUsuari[2] << endl; 
 					cout << "Data naixement (DD/MM/AAAA): " << infoUsuari[3] << endl << endl; 
 						
@@ -142,7 +142,7 @@ int main() {
 
 					cout << "** Consulta usuari **" << endl;
 					cout << "Nom complet: " << infoU[0] << endl;
-					cout << "Sobrenom: " << infoU[1] << endl
+					cout << "Sobrenom: " << infoU[1] << endl;
 					cout << "Correu electronic: " << infoU[2] << endl; 
 					cout << "Data naixement (DD/MM/AAAA): " << infoU[3] << endl << endl; 
 
@@ -166,7 +166,7 @@ int main() {
 					string infoU[4] = cmU.consultaUsuari();
 					cout << "** Dades usuari modificades **" << endl;
 					cout << "Nom complet: " << infoU[0] << endl;
-					cout << "Sobrenom: " << infoU[1] << endl
+					cout << "Sobrenom: " << infoU[1] << endl;
 					cout << "Correu electronic: " << infoU[2] << endl; 
 					cout << "Data naixement (DD/MM/AAAA): " << infoU[3] << endl << endl;
 				}

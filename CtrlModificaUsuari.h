@@ -1,5 +1,5 @@
-#ifndef PASSARELLA_USUARI_H
-#define PASSARELLA_USUARI_H
+#ifndef CTRL_MODIFICA_USUARI_H
+#define CTRL_MODIFICA_USUARI_H
 
 #include "PassarellaUsuari.h"
 #include <iostream>
@@ -9,6 +9,7 @@ class CtrlModificaUsuari{
     private:
         PassarellaUsuari usuari;
     public:
+        CtrlModificaUsuari();
         string[] consultaUsuari();
         void modificaUsuari(string nomU, string contraU, string correuU, string neixU);
 };

@@ -1,7 +1,11 @@
-#include "TxConsultaUsuari.h"
 #include "CtrlModificaUsuari.h"
+#include "TxConsultaUsuari.h"
 #include "PasarellaUsuari.h"
 
+CtrlModificaUsuari::CtrlModificaUsuari()
+{
+
+}
 
 string[] CtrlModificaUsuari::consultaUsuari()
 {
@@ -14,7 +18,7 @@ string[] CtrlModificaUsuari::consultaUsuari()
     return infoUsu;
 }
 
-void TxConsultaUsuari::modificaUsuari(string nomU, string contraU, string correuU, string neixU)
+void CtrlModificaUsuari::modificaUsuari(string nomU, string contraU, string correuU, string neixU)
 {
     PassarellaUsuari usuari(nomU, contraU, correuU, neixU);
     usuari.posaNom(nomU);
