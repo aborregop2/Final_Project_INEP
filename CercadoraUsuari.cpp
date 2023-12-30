@@ -1,4 +1,5 @@
 #include "CercadoraUsuari.h"
+#include "PasarellaUsuari.h"
 #include <pqxx/pqxx>
 
 CercadoraUsuari::CercadoraUsuari()

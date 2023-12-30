@@ -21,6 +21,18 @@ class PassarellaUsuari{
         void esborra();
 
         PassarellaUsuari& operator=(const PassarellaUsuari &p);
+        
+        //Getters
+        string obteNom();
+        string obteSobrenom();
+        string obteCorreuElectronic();
+        string obteDataNaixament();
+        
+        //Setters
+        void posaNom(string nomU);
+        void posaContrasenya(string contraU);
+        void posaCorreuElectronic(string correuU);
+        void posaDataNaixement(string neixU);
 };
 
 #endif

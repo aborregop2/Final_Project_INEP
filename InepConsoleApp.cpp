@@ -115,51 +115,60 @@ int main() {
 				if (opt == 1){
 					TxConsultaUsuari txCU;
 					txCU.executar();
+					string infoUsuari[4] = txCU.obteResultat();
 
-					/*
+					TxInfoCompres txIC;
+					txIC.executar();
+					string infoCompres[3] = txIC.obteResultat();
+
+
 					cout << "** Consulta usuari **" << endl;
-					cout << "Nom complet: " << endl; //Hay que poner
-					cout << "Sobrenom: " << endl; //Hay que poner
-					cout << "Correu electronic: " << endl; //Hay que poner
-					cout << "Data naixement (DD/MM/AAAA): " << endl << endl; //Hay que poner
+					cout << "Nom complet: " << infoUsuari[0] << endl;
+					cout << "Sobrenom: " << infoUsuari[1] << endl
+					cout << "Correu electronic: " << infoUsuari[2] << endl; 
+					cout << "Data naixement (DD/MM/AAAA): " << infoUsuari[3] << endl << endl; 
 						
-					cout << " videojocs comprats" << endl; //Hay que poner num de videojocs
-					cout << " paquet de videojocs comprats" << endl; //Hay que poner num de paquets
-					cout << " euros gastats en total" << endl; //Hay que poner num de paquets
-					*/	
+					cout << infoCompres[1] <<" videojocs comprats" << endl; 
+					cout << infoCompres[0] <<" paquet de videojocs comprats" << endl; 
+					cout << infoCompres[2] <<" euros gastats en total" << endl; 
+						
 
 
 				}
 				else if (opt == 2){
-					string sob, cont, cE;
-					cout << "** Consulta usuari **" << endl;
-					cout << "Nom complet: " << endl; //Hay que poner
-					cout << "Sobrenom: " << endl; //Hay que poner
-					cout << "Correu electronic: " << endl; //Hay que poner
-					cout << "Data naixement (DD/MM/AAAA): " << endl << endl; //Hay que poner
+					string nomU, contraU, correuU, neixU;
+					CtrlModificaUsuari cmU;
+					string infoU[4] = cmU.consultaUsuari();
 
-					
+					cout << "** Consulta usuari **" << endl;
+					cout << "Nom complet: " << infoU[0] << endl;
+					cout << "Sobrenom: " << infoU[1] << endl
+					cout << "Correu electronic: " << infoU[2] << endl; 
+					cout << "Data naixement (DD/MM/AAAA): " << infoU[3] << endl << endl; 
+
 					//cin >> c; //Intro
 
 					cout << "Omplir la informacio que es vol modificar ..." << endl;
 					cout << "Nom complet: ";
-					cin >> nc >> nc;	//Getline()
-					cout << "Sobrenom: ";
-					cin >> sob;
+					cin >> nomU;	//Getline()
 					cout << "Contrasenya: ";
-					cin >> cont;
+					cin >> contraU;
 					cout << "Correu electronic: ";
-					cin >> cE;
+					cin >> correuU;
 					cout << "Data naixement (DD/MM/AAAA): ";
-						
+					cin >> neixU;
+
+					cmU.modificaUsuari(nomU, contraU, correuU, neixU);
+					
 					//Pasan cosas char c
 					//cin >> c; //Intro
-
+					
+					string infoU[4] = cmU.consultaUsuari();
 					cout << "** Dades usuari modificades **" << endl;
-					cout << "Nom complet: " << endl; //Hay que poner
-					cout << "Sobrenom: " << endl; //Hay que poner
-					cout << "Correu electronic: " << endl; //Hay que poner
-					cout << "Data naixement (DD/MM/AAAA): " << endl << endl; //Hay que poner
+					cout << "Nom complet: " << infoU[0] << endl;
+					cout << "Sobrenom: " << infoU[1] << endl
+					cout << "Correu electronic: " << infoU[2] << endl; 
+					cout << "Data naixement (DD/MM/AAAA): " << infoU[3] << endl << endl;
 				}
 				else if (opt == 3){
 					string contraU;

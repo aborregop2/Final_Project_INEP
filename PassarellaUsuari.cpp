@@ -51,3 +51,84 @@ PassarellaUsuari& PasarellaUsuari::operator=(const PasarellaUsuari& p) {
 
   return *this;
 }
+
+string PassarellaUsuari::obteNom()
+{
+  return nom;
+}
+string PassarellaUsuari::obteSobrenom()
+{
+  return sobrenom;
+}
+string PassarellaUsuari::obteCorreuElectronic()
+{
+  return correuElectronic;
+}
+
+string PassarellaUsuari::obteDataNaixament()
+{
+  return dataNaixement;
+}
+
+void PassarellaUsuari::posaNom(string nomU)
+{
+  if(nomU != ""){
+    try{
+        pqxx::connection conn("dbname =INEP user =postgres  password =018180 hostaddr =127.0.0.1 port =5432");
+        pqxx::work txn(conn);
+        txn.exec("UPDATE public.usuari SET nom= '"+nomU+"' WHERE sobrenom = '" + sobrenom + "'");
+        txn.commit();
+    }
+    catch(const exception &e){
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
+  }
+}
+
+
+void PassarellaUsuari::posaContrasenya(string contraU)
+{
+  if(contraU != ""){
+    try{
+        pqxx::connection conn("dbname =INEP user =postgres  password =018180 hostaddr =127.0.0.1 port =5432");
+        pqxx::work txn(conn);
+        txn.exec("UPDATE public.usuari SET contrasenya= '"+contraU+"' WHERE sobrenom = '" + sobrenom + "'");
+        txn.commit();
+    }
+    catch(const exception &e){
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
+  }
+}
+
+
+void PassarellaUsuari::posaCorreuElectronic(string correuU)
+{
+  if(correuU != ""){
+    try{
+        pqxx::connection conn("dbname =INEP user =postgres  password =018180 hostaddr =127.0.0.1 port =5432");
+        pqxx::work txn(conn);
+        txn.exec("UPDATE public.usuari SET correuelectronic= '"+correuU+"' WHERE sobrenom = '" + sobrenom + "'");
+        txn.commit();
+    }
+    catch(const exception &e){
+        //Captura excepcio de UNIQUE del correuElectronic
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
+  }
+}
+
+void PassarellaUsuari::posaDataNaixement(string neixU)
+{
+  if(neixU != ""){
+    try{
+        pqxx::connection conn("dbname =INEP user =postgres  password =018180 hostaddr =127.0.0.1 port =5432");
+        pqxx::work txn(conn);
+        txn.exec("UPDATE public.usuari SET datanaixement= '"+neixU+"' WHERE sobrenom = '" + sobrenom + "'");
+        txn.commit();
+    }
+    catch(const exception &e){
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
+  }
+}
