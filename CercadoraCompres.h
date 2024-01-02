@@ -9,6 +9,7 @@ using namespace std;
 
 class CercadoraCompres{
     public:
+        CercadoraCompres();
         vector<PassarellaCompra> cercaCompra(string sobrenomU);
 };
 

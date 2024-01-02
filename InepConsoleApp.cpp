@@ -7,6 +7,8 @@
 #include "TxInfoCompres.h"
 #include "CtrlModificaUsuari.h"
 #include "TxEsborraUsuari.h"
+#include "TxConsultaVideojoc.h"
+
 
 
 using namespace std;
@@ -206,11 +208,17 @@ int main() {
 				cout << endl;
 				
 				if (opt == 1){
-					string nV;
+					string nomV;
 
 					cout << "** Compra videojoc **" << endl;
 					cout << "Nom videojoc: ";
-					cin >> nV;
+					cin >> nomV;
+			
+					TxConsultaVideojoc txCV(nomV);
+					txCV.executar();
+					vector<PasarellaVideojoc> v = txCV.obteResultat();
+					
+
 					cout << endl << "Informacio videojoc ..." << endl;
 					cout << "Nom videojoc: (nom videojoc)" << endl;
 					cout << "Descripcio: (descripcio)" << endl;

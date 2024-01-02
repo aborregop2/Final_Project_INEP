@@ -1,5 +1,11 @@
 #include "CercadoraElemCompra.h"
 #include "PassarellaElemCompra.h"
+#include <pqxx/pqxx>
+
+CercadoraElemCompra::CercadoraElemCompra()
+{
+    
+}
 
 vector<PasarellaElemCompra> CercadoraElemCompra::cercaElement(string elem)
 {

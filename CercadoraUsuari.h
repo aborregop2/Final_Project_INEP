@@ -9,8 +9,7 @@ using namespace std;
 class CercadoraUsuari {
     public:
         CercadoraUsuari();
-        
-        PassarellaUsuari cercaUsuari(string sobrenomU);
+        vector<PassarellaUsuari> cercaUsuari(string sobrenomU);
 
 };
 

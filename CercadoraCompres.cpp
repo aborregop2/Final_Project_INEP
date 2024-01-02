@@ -1,5 +1,11 @@
 #include "CercadoraCompres.h"
 #include "PassarellaCompra.h"
+#include <pqxx/pqxx>
+
+CercadoraCompres::CercadoraCompres()
+{
+
+}
 
 vector<PassarellaCompra> CercadoraCompres::cercaCompra(string sobrenomU)
 {

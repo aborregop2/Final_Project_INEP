@@ -6,6 +6,7 @@ using namespace std;
 
 class CercadoraElemCompra{
     public:
+        CercadoraElemCompra();
         vector<PasarellaElemCompra> cercaElement(string elem);
 }
 #endif
