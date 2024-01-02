@@ -1,17 +1,17 @@
 #include "CtrlModificaUsuari.h"
 #include "TxConsultaUsuari.h"
-#include "PasarellaUsuari.h"
+#include "PassarellaUsuari.h"
 
 CtrlModificaUsuari::CtrlModificaUsuari()
 {
 
 }
 
-string[] CtrlModificaUsuari::consultaUsuari()
+string* CtrlModificaUsuari::consultaUsuari()
 {
     TxConsultaUsuari txCU;
     txCU.executar();
-    string infoUsu[4] = txCU.obteResultat();
+    string* infoUsu = txCU.obteResultat();
     PassarellaUsuari usu = txCU.obteUsuari();
     usuari = usu;
 

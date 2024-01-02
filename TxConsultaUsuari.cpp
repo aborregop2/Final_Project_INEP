@@ -1,10 +1,14 @@
 #include "TxConsultaUsuari.h"
 #include "Videoconsola.h"
-#include "PasarellaUsuari.h"
+#include "PassarellaUsuari.h"
 
-string[] TxConsultaUsuari::obteResultat() 
+TxConsultaUsuari::TxConsultaUsuari()
+{
+    
+}
+string* TxConsultaUsuari::obteResultat() 
 { 
-    return infoUsu;
+    return resultat;
 }    
 
 PassarellaUsuari TxConsultaUsuari::obteUsuari()
@@ -12,17 +16,18 @@ PassarellaUsuari TxConsultaUsuari::obteUsuari()
     return usuari;
 }
 
-void executar()
+void TxConsultaUsuari::executar()
 {
     Videoconsola& v = Videoconsola::getInstance();
-    PasarellaUsuari usu = v.obteUsuari();
+    PassarellaUsuari usu = v.obteUsuari().value();
 
+    string infoUsu[4];
     infoUsu[0] = usu.obteNom();
     infoUsu[1] = usu.obteSobrenom();
     infoUsu[2] = usu.obteCorreuElectronic();
     infoUsu[3] = usu.obteDataNaixament();
 
-    usuari = u;
+    usuari = usu;
     resultat = infoUsu;
 }
 

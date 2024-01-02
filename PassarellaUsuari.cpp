@@ -7,6 +7,19 @@ PassarellaUsuari::PassarellaUsuari(string nU,string sU,string cU,string ceU,stri
 
 }
 
+PassarellaUsuari::PassarellaUsuari(string nU,string cU,string ceU,string dnU): nom(nU),
+                                  contrasenya(cU), correuElectronic(ceU), dataNaixement(dnU)
+{
+
+}
+
+PassarellaUsuar::PassarellaUsuari(){
+  
+}
+
+
+
+
 string PassarellaUsuari::obteContrasenya() 
 {
     return contrasenya;

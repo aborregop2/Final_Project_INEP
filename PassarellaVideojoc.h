@@ -15,11 +15,11 @@ class PassarellaVideojoc{
     public:
         PassarellaVideojoc(string nomV, int qeV, string dL, int minV, string gV);
         
-        string getNom();
-        int getQualifiacioEdat();
-        string getDataLlansament();
-        int getMinsEstimat();
-        string getGenere();
+        string obteNom();
+        int obteQualifiacioEdat();
+        string obteDataLlansament();
+        int obteMinsEstimat();
+        string obteGenere();
 };
 
 

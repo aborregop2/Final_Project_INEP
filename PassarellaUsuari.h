@@ -1,8 +1,7 @@
-#ifndef PASARELLA_USUARI_H
-#define PASARELLA_USUARI_H
+#ifndef PASSARELLA_USUARI_H
+#define PASSARELLA_USUARI_H
 
 #include <iostream>
-#include <pqxx/pqxx>
 using namespace std;
 
 class PassarellaUsuari{
@@ -15,7 +14,9 @@ class PassarellaUsuari{
         
     public:
         PassarellaUsuari(string nU,string sU,string cU,string ceU,string dnU);
-        
+        PassarellaUsuari(string nU,string cU,string ceU,string dnU);
+
+        PassarellaUsuari();
         string obteContrasenya();
         void insereix();
         void esborra();

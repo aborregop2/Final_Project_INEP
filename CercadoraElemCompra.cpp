@@ -1,5 +1,6 @@
 #include "CercadoraElemCompra.h"
 #include "PassarellaElemCompra.h"
+
 #include <pqxx/pqxx>
 
 CercadoraElemCompra::CercadoraElemCompra()
@@ -7,7 +8,7 @@ CercadoraElemCompra::CercadoraElemCompra()
     
 }
 
-vector<PasarellaElemCompra> CercadoraElemCompra::cercaElement(string elem)
+vector<PassarellaElemCompra> CercadoraElemCompra::cercaElement(string elem)
 {
     try{
         pqxx::connection conn("dbname =INEP user =postgres  password =018180 hostaddr =127.0.0.1 port =5432");
@@ -16,7 +17,7 @@ vector<PasarellaElemCompra> CercadoraElemCompra::cercaElement(string elem)
         
         vector<PassarellaElemCompra> ec;
         for (pqxx::result::const_iterator row = r.begin(); row != r.end(); ++row) {
-            PasarellaElemCompra pec;
+            PassarellaElemCompra pec;
             pec.nom = row["nom"].as<string>();
             pec.descripcio = row["descripcio"].as<string>();
             pec.preu = row["preu"].as<string>();

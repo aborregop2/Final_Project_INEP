@@ -1,12 +1,13 @@
 #ifndef CERCADORA_ELEM_COMPRA_H
 #define CERCADORA_ELEM_COMPRA_H
-#include <isotream>
-#include "PasarellaElemCompra.h"
+#include "PassarellaElemCompra.h"
+#include <iostream>
+
 using namespace std;
 
 class CercadoraElemCompra{
     public:
         CercadoraElemCompra();
-        vector<PasarellaElemCompra> cercaElement(string elem);
+        vector<PassarellaElemCompra> cercaElement(string elem);
 }
 #endif

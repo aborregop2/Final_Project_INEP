@@ -1,7 +1,6 @@
 #ifndef CERCADORA_COMPRES_H
 #define CERCADORA_COMPRES_H
 #include "PassarellaCompra.h"
-#include <pqxx/pqxx>
 #include <iostream>
 #include <vector>
 

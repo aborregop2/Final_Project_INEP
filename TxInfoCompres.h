@@ -2,18 +2,17 @@
 #define TX_INFO_COMPRES_H
 
 #include <iostream>
-#include <pqxx/pqxx>
 using namespace std;
 
 class TxInfoCompres{
     private:
-        string resultat[3];
+        string* resultat;
         
     public:
         TxInfoCompres();
 
         void executar();
-        string[] obteResultat();
+        string* obteResultat();
 };
 
 #endif

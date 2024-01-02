@@ -1,5 +1,5 @@
 #include "TxEsborraUsuari.h"
-#include "PasarellaUsuari.h"
+#include "PassarellaUsuari.h"
 #include "Videoconsola.h"
 
 TxEsborraUsuari::TxEsborraUsuari(string contraU) : contrasenyaU(contraU)
@@ -10,7 +10,7 @@ TxEsborraUsuari::TxEsborraUsuari(string contraU) : contrasenyaU(contraU)
 void TxEsborraUsuari::executar()
 {
     Videoconsola& v = Videoconsola::getInstance();
-    PasarellaUsuari usu = v.obteUsuari();
+    PassarellaUsuari usu = v.obteUsuari().value();
 
     string c = usu.obteContrasenya();
     if (c != contrasenyaU) {

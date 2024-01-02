@@ -14,7 +14,7 @@ void TxIniciSessio::executar()
 
     string contr = u.obteContrasenya();
     if (contr != contrasenyaU) {
-        //Error 
+        cout << "Contrasenya Incorrecta BernardinoCabron" << endl;
     }
 
     Videoconsola& v = Videoconsola::getInstance();

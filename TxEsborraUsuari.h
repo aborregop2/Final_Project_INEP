@@ -2,7 +2,6 @@
 #define TX_ESBORRA_USUARI_H
 
 #include <iostream>
-#include <pqxx/pqxx>
 using namespace std;
 
 class TxEsborraUsuari{

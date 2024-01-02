@@ -1,20 +1,19 @@
 #ifndef TX_CONSULTA_USUARI_H
 #define TX_CONSULTA_USUARI_H
-
+#include "PassarellaUsuari.h"
 #include <iostream>
-#include <pqxx/pqxx>
 using namespace std;
 
 class TxConsultaUsuari{
     private:
-        PasarellaUsuari usuari;
-        string resultat[4];
+        PassarellaUsuari usuari;
+        string* resultat;
         
     public:
         TxConsultaUsuari();
 
         void executar();
-        string[] obteResultat();
+        string* obteResultat();
         PassarellaUsuari obteUsuari();
 };
 

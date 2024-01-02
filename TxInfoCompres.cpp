@@ -3,12 +3,20 @@
 #include "Videoconsola.h"
 #include "PassarellaUsuari.h"
 #include "CercadoraCompres.h"
+#include "CercadoraElemCompra.h"
 #include <vector>
+#include <string>
+#include <iostream>
+
+TxInfoCompres::TxInfoCompres()
+{
+
+}
 
 void TxInfoCompres::executar()
 {
     Videoconsola& v = Videoconsola::getInstance();
-    PassarellaUsuari u = v.obteUsuari();
+    PassarellaUsuari u = v.obteUsuari().value();
     string sobrenomU = u.obteSobrenom();
     
     CercadoraCompres CeCo;
@@ -19,21 +27,24 @@ void TxInfoCompres::executar()
     for(unsigned int i = 0; i < compresU.size(); ++i){
         string elem = compresU[i].obteElementCompra();
         CercadoraElemCompra CE;
-        PasarellaElemCompra ec = CE.cercaElement(elem);
-        int preuE = ec.obtePreu();
-        int tipusE = ec.obteTipus();
+        vector<PassarellaElemCompra> ec = CE.cercaElement(elem);
+        int preuE = ec[0].obtePreu();
+        string tipusE = ec[0].obteTipus();
         totalEuros += preuE;
 
         if (tipusE == "paquet") totalPaquets++;
         else if (tipusE == "videojoc") totalVideojocs++;
     }
+    string rest[3];
+    
+    rest[0] = to_string(totalPaquets);
+    rest[1] = to_string(totalVideojocs);
+    rest[2] = to_string(totalEuros);
 
-    resultat[0] = to_string(totalPaquets);
-    resultat[1] = to_string(totalVideojocs);
-    resultat[2] = to_string(totalEuros);
+    resultat = rest;
 }
 
-string[] TxInfoCompres::obteResultat()
+string* TxInfoCompres::obteResultat()
 {
     return resultat;
 }

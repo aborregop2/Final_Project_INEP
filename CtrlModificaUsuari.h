@@ -10,7 +10,7 @@ class CtrlModificaUsuari{
         PassarellaUsuari usuari;
     public:
         CtrlModificaUsuari();
-        string[] consultaUsuari();
+        string* consultaUsuari();
         void modificaUsuari(string nomU, string contraU, string correuU, string neixU);
 };
 

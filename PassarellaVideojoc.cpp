@@ -4,23 +4,23 @@ PassarellaVideojoc::PassarellaVideojoc(string nomV, int qeV, string dL, int minV
     
 }
 
-string PassarellaVideojoc::getNom()
+string PassarellaVideojoc::obteNom()
 {
     return nom; 
 }
-int PassarellaVideojoc::getQualifiacioEdat()
+int PassarellaVideojoc::obteQualifiacioEdat()
 {
     return qualificacioEdat;
 }
-string PassarellaVideojoc::getDataLlansament()
+string PassarellaVideojoc::obteDataLlansament()
 {
     return dataLlansament;
 }
-int PassarellaVideojoc::getMinsEstimat()
+int PassarellaVideojoc::obteMinsEstimat()
 {
     return minsEstimat;
 }
-string PassarellaVideojoc::getGenere()
+string PassarellaVideojoc::obteGenere()
 {
     return genere;
 }

@@ -1,4 +1,6 @@
 #include <iostream>
+#include <chrono>
+#include <ctime>
 #include <pqxx/pqxx>
 #include "TxRegistraUsuari.h"
 #include "TxIniciSessio.h"
@@ -8,6 +10,7 @@
 #include "CtrlModificaUsuari.h"
 #include "TxEsborraUsuari.h"
 #include "TxConsultaVideojoc.h"
+#include "TxComprarVideojoc.h"
 
 
 
@@ -16,8 +19,7 @@ using namespace pqxx;
 
 int main() {
 
-			string nc;
-			string c;
+		string nc;
 
 		while(true){
 			inici:
@@ -117,11 +119,11 @@ int main() {
 				if (opt == 1){
 					TxConsultaUsuari txCU;
 					txCU.executar();
-					string infoUsuari[4] = txCU.obteResultat();
+					string* infoUsuari = txCU.obteResultat();
 
 					TxInfoCompres txIC;
 					txIC.executar();
-					string infoCompres[3] = txIC.obteResultat();
+					string* infoCompres = txIC.obteResultat();
 
 
 					cout << "** Consulta usuari **" << endl;
@@ -140,7 +142,7 @@ int main() {
 				else if (opt == 2){
 					string nomU, contraU, correuU, neixU;
 					CtrlModificaUsuari cmU;
-					string infoU[4] = cmU.consultaUsuari();
+					string* infoU = cmU.consultaUsuari();
 
 					cout << "** Consulta usuari **" << endl;
 					cout << "Nom complet: " << infoU[0] << endl;
@@ -165,12 +167,12 @@ int main() {
 					//Pasan cosas char c
 					//cin >> c; //Intro
 					
-					string infoU[4] = cmU.consultaUsuari();
+					string *infoUs = cmU.consultaUsuari();
 					cout << "** Dades usuari modificades **" << endl;
-					cout << "Nom complet: " << infoU[0] << endl;
-					cout << "Sobrenom: " << infoU[1] << endl;
-					cout << "Correu electronic: " << infoU[2] << endl; 
-					cout << "Data naixement (DD/MM/AAAA): " << infoU[3] << endl << endl;
+					cout << "Nom complet: " << infoUs[0] << endl;
+					cout << "Sobrenom: " << infoUs[1] << endl;
+					cout << "Correu electronic: " << infoUs[2] << endl; 
+					cout << "Data naixement (DD/MM/AAAA): " << infoUs[3] << endl << endl;
 				}
 				else if (opt == 3){
 					string contraU;
@@ -208,7 +210,7 @@ int main() {
 				cout << endl;
 				
 				if (opt == 1){
-					string nomV;
+					string nomV, c;
 
 					cout << "** Compra videojoc **" << endl;
 					cout << "Nom videojoc: ";
@@ -216,28 +218,53 @@ int main() {
 			
 					TxConsultaVideojoc txCV(nomV);
 					txCV.executar();
-					vector<PasarellaVideojoc> v = txCV.obteResultat();
+					string* infoVideojoc = txCV.obteResultat();
 					
 
 					cout << endl << "Informacio videojoc ..." << endl;
-					cout << "Nom videojoc: (nom videojoc)" << endl;
-					cout << "Descripcio: (descripcio)" << endl;
-					cout << "Qualificacio edat: (edat)" << endl;
-					cout << "Genere: (genere)" << endl;
-					cout << "Data llansament: (data)" << endl;
-					cout << "Preu: (preu)" << endl;
+					cout << "Nom videojoc: " << infoVideojoc[0] << endl;
+					cout << "Descripcio: " << infoVideojoc[1] <<endl;
+					cout << "Qualificacio edat: " << infoVideojoc[2] << endl;
+					cout << "Genere: " << infoVideojoc[5] << endl;
+					cout << "Data llansament: " << infoVideojoc[3] << endl;
+					cout << "Preu: " << infoVideojoc[6] << endl;
 					cout << "Vols continuar amb la compra (S/N):" << endl;
 					
 					cin >> c;
 
 					if (c == "S") {
-						cout << "Compra registrada: " << "(avui)" << endl;
+					
+						// Obtener el reloj actual del sistema
+						auto ahora = std::chrono::system_clock::now();
+
+						// Convertir el tiempo en un formato legible
+						std::time_t tiempoActual = std::chrono::system_clock::to_time_t(ahora);
+
+						// Obtener la estructura de tiempo local de manera segura con ctime_s
+						std::tm tiempoLocal{};
+
+
+						// Imprimir la fecha y hora actual
+					
+						TxComprarVideojoc txCV(nomV);
+						txCV.executar();
+
+						
+							// Imprimir día, mes y año actual
+						std::cout << "Compra Registrada: " << tiempoLocal.tm_mday << "/" << tiempoLocal.tm_mon + 1 << "/" << tiempoLocal.tm_year + 1900 << std::endl;
+						
+						//cout << "Compra registrada: " << local_tm.tm_mday <<'/' << (local_tm.tm_mon + 1) << '/' << (local_tm.tm_year + 1900) << endl;
 						cout << "Jocs relacionats:" << endl;
-						//Pasan cosas
+						vector<InfoRel> res = txCV.obteResultat();
+						for(unsigned int i = 0; i < res.size(); ++i){
+							cout << "- " << res[i].nomVid << "; " << res[i].descVid << "; " << res[i].preu << endl;
+						}
+						cout << endl;
+
 					}
 				}
 				else if (opt == 2){
-					string nomV;
+					string nomV, c;
 					cout << "** Compra paquet **" << endl;
 					cout << "Nom paquet: ";
 					cin >> nomV;
@@ -283,6 +310,7 @@ int main() {
 				break;
 			}
 			else if (opt == 4){
+				string c;
 				cout << "** Tancar sessio **" << endl;
 				cout << "Vols tancar sessio (S/N)";
 				cin >> c;
