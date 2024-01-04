@@ -21,6 +21,7 @@
 #include "TxConsultarVideojocsPerEdat.h"
 #include "TxConsultarPaquet.h"
 #include "TxConsultarPaquets.h"
+#include "Structs.h"
 
 
 using namespace std;

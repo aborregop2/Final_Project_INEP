@@ -130,7 +130,7 @@ int main() {
 				cout << "7. Tornar" << endl;
 				cout << "Opcio: ";
 
-				string cosult;
+				string consult;
 				cin >> consult;
 				if(consult == 1){
 					cdp->consultarVideojoc();

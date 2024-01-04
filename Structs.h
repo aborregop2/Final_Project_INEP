@@ -1,3 +1,6 @@
+#ifndef STRUCTS_H
+#define STRUCTS_H
+
 #include <iostream>
 #include <vector>
 
@@ -18,3 +21,5 @@ struct InfoPaq{
     int estalvi;
     vector<InfoVid> res;
 };
+
+#endif
