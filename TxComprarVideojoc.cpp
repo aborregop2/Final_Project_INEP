@@ -20,13 +20,15 @@ TxComprarVideojoc::TxComprarVideojoc(std::string nomVid):nom(nomVid)
 
 void TxComprarVideojoc::executar()
 {
-    Videoconsola& v = Videoconsola::getInstance();
-    optional<PassarellaUsuari> u = v.obteUsuari();
+    Videoconsola* v = Videoconsola::getInstance();
+    optional<PassarellaUsuari> u = v->obteUsuari();
     
     auto now = std::chrono::system_clock::now();
 	std::time_t now_time = std::chrono::system_clock::to_time_t(now);
 	std::tm local_tm = *std::localtime(&now_time);
-    std::string dataavui = to_string(local_tm.tm_mday) + '/' + to_string((local_tm.tm_mon + 1)) + '/' + to_string((local_tm.tm_year + 1900));
+    std::string dataavui = to_string(local_tm.tm_mday) + '/' + to_string((local_tm.tm_mon + 1)) + '/' + to_string((local_tm.tm_year + 1900)) + " " + to_string(local_tm.tm_hour) + ':' + std::to_string(local_tm.tm_min);
+   
+
     
     PassarellaCompra pc(u.value().obteNom(), nom, dataavui);
    

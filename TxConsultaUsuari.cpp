@@ -18,8 +18,8 @@ PassarellaUsuari TxConsultaUsuari::obteUsuari()
 
 void TxConsultaUsuari::executar()
 {
-    Videoconsola& v = Videoconsola::getInstance();
-    PassarellaUsuari usu = v.obteUsuari().value();
+    Videoconsola* v = Videoconsola::getInstance();
+    PassarellaUsuari usu = v->obteUsuari().value();
 
     string infoUsu[4];
     infoUsu[0] = usu.obteNom();

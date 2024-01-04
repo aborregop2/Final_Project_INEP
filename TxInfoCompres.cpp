@@ -15,8 +15,8 @@ TxInfoCompres::TxInfoCompres()
 
 void TxInfoCompres::executar()
 {
-    Videoconsola& v = Videoconsola::getInstance();
-    PassarellaUsuari u = v.obteUsuari().value();
+    Videoconsola* v = Videoconsola::getInstance();
+    PassarellaUsuari u = v->obteUsuari().value();
     string sobrenomU = u.obteSobrenom();
     
     CercadoraCompres CeCo;

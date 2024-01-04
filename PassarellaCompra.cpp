@@ -34,3 +34,5 @@ void PassarellaCompra::insereix()
         return 1;
     } 
 }
+
+ 

@@ -10,12 +10,13 @@ using namespace std;
 class Videoconsola {
     private:
         optional<PassarellaUsuari> usuari;
+        static Videoconsola* instance;
         Videoconsola();
 
     public:
         
         optional<PassarellaUsuari> obteUsuari();
-        static Videoconsola& getInstance();
+        static Videoconsola* getInstance();
 
         void iniciaSessio(PassarellaUsuari u);
         void tancaSessio();

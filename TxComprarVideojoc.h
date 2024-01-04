@@ -11,6 +11,7 @@ struct InfoRel{
     string descVid;
     string preu;
 };
+
 class TxComprarVideojoc {
     private:
         string nom; 

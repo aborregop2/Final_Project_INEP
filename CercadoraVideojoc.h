@@ -11,6 +11,9 @@ class CercadoraVideojoc {
     public:
         CercadoraVideojoc();
         vector<PassarellaVideojoc> cercaVideojoc(string nomV);
+        vector<PassarellaVideojoc> cercaTotsVideojocs();
+        vector<PassarellaVideojoc> cercaVideojocsEdat(int edatV);
+        vector<PassarellaVideojoc> cercaVideojocsNovetat(string dataV);
 
 };
 
