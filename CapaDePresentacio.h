@@ -18,6 +18,7 @@
 #include "TxConsultaVideojocs.h"
 #include "PassarellaVideojoc.h"
 #include "TxConsultaNovetatsVideojocs.h"
+#include "TxConsultarVideojocsPerEdat.h"
 #include "TxConsultarPaquet.h"
 #include "TxConsultarPaquets.h"
 

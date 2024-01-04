@@ -12,10 +12,6 @@ C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\TxConsultaCompres.h(16
 C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\TxConsultarPaquet.h(28,17): error C2079: 'TxConsultarPaquet::resultat' uses undefined struct 'InfoPaq'
   (compiling source file 'InepConsoleApp.cpp')
   
-C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\InepConsoleApp.cpp(36,10): error C2039: 'registrarusuari': is not a member of 'CapaDePresentacio'
-  C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\CapaDePresentacio.h(27,7):
-  see declaration of 'CapaDePresentacio'
-  
 C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\InepConsoleApp.cpp(73,11): error C2039: 'consultarUsuari': is not a member of 'CapaDePresentacio'
   C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\CapaDePresentacio.h(27,7):
   see declaration of 'CapaDePresentacio'
