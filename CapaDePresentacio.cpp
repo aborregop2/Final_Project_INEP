@@ -37,7 +37,10 @@ void CapaDePresentacio::iniciSessio()
 
 void CapaDePresentacio::tancaSessio()
 {
-
+    TxTancaSessio txTS;
+	txTS.executar();
+    
+	cout << "Sessio tancada correctament" << endl;
 }
 
 void CapaDePresentacio::registrarUsuari()

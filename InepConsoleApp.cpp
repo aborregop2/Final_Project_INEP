@@ -33,7 +33,7 @@ int main() {
 				cdp->iniciSessio();
 			}
 			else if(opt == 2){ 
-				cdp->registrarusuari();
+				cdp->registrarUsuari();
 			}
 			else if (opt == 3){
 				break;
@@ -165,9 +165,7 @@ int main() {
 				cin >> c;
 
 				if (c == "S") {
-					TxTancaSessio txTS;
-					txTS.executar();
-					cout << "Sessio tancada correctament" << endl;
+					cdp->tancaSessio();
 
 					goto inici;
 				}

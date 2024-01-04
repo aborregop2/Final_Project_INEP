@@ -1,25 +1,31 @@
 ﻿  InepConsoleApp.cpp
-InepConsoleApp.obj : error LNK2019: unresolved external symbol "public: __cdecl TxRegistraUsuari::TxRegistraUsuari(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0TxRegistraUsuari@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0000@Z) referenced in function main
-InepConsoleApp.obj : error LNK2019: unresolved external symbol "public: void __cdecl TxRegistraUsuari::executar(void)" (?executar@TxRegistraUsuari@@QEAAXXZ) referenced in function main
-InepConsoleApp.obj : error LNK2019: unresolved external symbol "public: __cdecl TxIniciSessio::TxIniciSessio(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0TxIniciSessio@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z) referenced in function main
-InepConsoleApp.obj : error LNK2019: unresolved external symbol "public: void __cdecl TxIniciSessio::executar(void)" (?executar@TxIniciSessio@@QEAAXXZ) referenced in function main
-InepConsoleApp.obj : error LNK2019: unresolved external symbol "public: __cdecl TxTancaSessio::TxTancaSessio(void)" (??0TxTancaSessio@@QEAA@XZ) referenced in function main
-InepConsoleApp.obj : error LNK2019: unresolved external symbol "public: void __cdecl TxTancaSessio::executar(void)" (?executar@TxTancaSessio@@QEAAXXZ) referenced in function main
-InepConsoleApp.obj : error LNK2019: unresolved external symbol "public: __cdecl TxConsultaUsuari::TxConsultaUsuari(void)" (??0TxConsultaUsuari@@QEAA@XZ) referenced in function main
-InepConsoleApp.obj : error LNK2019: unresolved external symbol "public: void __cdecl TxConsultaUsuari::executar(void)" (?executar@TxConsultaUsuari@@QEAAXXZ) referenced in function main
-InepConsoleApp.obj : error LNK2019: unresolved external symbol "public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > * __cdecl TxConsultaUsuari::obteResultat(void)" (?obteResultat@TxConsultaUsuari@@QEAAPEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ) referenced in function main
-InepConsoleApp.obj : error LNK2019: unresolved external symbol "public: __cdecl TxInfoCompres::TxInfoCompres(void)" (??0TxInfoCompres@@QEAA@XZ) referenced in function main
-InepConsoleApp.obj : error LNK2019: unresolved external symbol "public: void __cdecl TxInfoCompres::executar(void)" (?executar@TxInfoCompres@@QEAAXXZ) referenced in function main
-InepConsoleApp.obj : error LNK2019: unresolved external symbol "public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > * __cdecl TxInfoCompres::obteResultat(void)" (?obteResultat@TxInfoCompres@@QEAAPEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ) referenced in function main
-InepConsoleApp.obj : error LNK2019: unresolved external symbol "public: __cdecl CtrlModificaUsuari::CtrlModificaUsuari(void)" (??0CtrlModificaUsuari@@QEAA@XZ) referenced in function main
-InepConsoleApp.obj : error LNK2019: unresolved external symbol "public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > * __cdecl CtrlModificaUsuari::consultaUsuari(void)" (?consultaUsuari@CtrlModificaUsuari@@QEAAPEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ) referenced in function main
-InepConsoleApp.obj : error LNK2019: unresolved external symbol "public: void __cdecl CtrlModificaUsuari::modificaUsuari(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?modificaUsuari@CtrlModificaUsuari@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000@Z) referenced in function main
-InepConsoleApp.obj : error LNK2019: unresolved external symbol "public: __cdecl TxEsborraUsuari::TxEsborraUsuari(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0TxEsborraUsuari@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) referenced in function main
-InepConsoleApp.obj : error LNK2019: unresolved external symbol "public: void __cdecl TxEsborraUsuari::executar(void)" (?executar@TxEsborraUsuari@@QEAAXXZ) referenced in function main
-InepConsoleApp.obj : error LNK2019: unresolved external symbol "public: __cdecl TxConsultaVideojoc::TxConsultaVideojoc(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0TxConsultaVideojoc@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) referenced in function main
-InepConsoleApp.obj : error LNK2019: unresolved external symbol "public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > * __cdecl TxConsultaVideojoc::obteResultat(void)" (?obteResultat@TxConsultaVideojoc@@QEAAPEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ) referenced in function main
-InepConsoleApp.obj : error LNK2019: unresolved external symbol "public: void __cdecl TxConsultaVideojoc::executar(void)" (?executar@TxConsultaVideojoc@@QEAAXXZ) referenced in function main
-InepConsoleApp.obj : error LNK2019: unresolved external symbol "public: __cdecl TxComprarVideojoc::TxComprarVideojoc(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0TxComprarVideojoc@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) referenced in function main
-InepConsoleApp.obj : error LNK2019: unresolved external symbol "public: void __cdecl TxComprarVideojoc::executar(void)" (?executar@TxComprarVideojoc@@QEAAXXZ) referenced in function main
-InepConsoleApp.obj : error LNK2019: unresolved external symbol "public: class std::vector<struct InfoRel,class std::allocator<struct InfoRel> > __cdecl TxComprarVideojoc::obteResultat(void)" (?obteResultat@TxComprarVideojoc@@QEAA?AV?$vector@UInfoRel@@V?$allocator@UInfoRel@@@std@@@std@@XZ) referenced in function main
-C:\Users\Shawn\source\repos\InepConsoleApp\x64\Debug\InepConsoleApp.exe : fatal error LNK1120: 23 unresolved externals
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\TxConsultaCompres.h(9,15): error C2011: 'InfoVid': 'struct' type redefinition
+  (compiling source file 'InepConsoleApp.cpp')
+  C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\TxComprarPaquet.h(11,8):
+  see declaration of 'InfoVid'
+  
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\TxConsultaCompres.h(16,15): error C2011: 'InfoPaq': 'struct' type redefinition
+  (compiling source file 'InepConsoleApp.cpp')
+  C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\TxComprarPaquet.h(17,8):
+  see declaration of 'InfoPaq'
+  
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\TxConsultarPaquet.h(28,17): error C2079: 'TxConsultarPaquet::resultat' uses undefined struct 'InfoPaq'
+  (compiling source file 'InepConsoleApp.cpp')
+  
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\InepConsoleApp.cpp(36,10): error C2039: 'registrarusuari': is not a member of 'CapaDePresentacio'
+  C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\CapaDePresentacio.h(27,7):
+  see declaration of 'CapaDePresentacio'
+  
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\InepConsoleApp.cpp(73,11): error C2039: 'consultarUsuari': is not a member of 'CapaDePresentacio'
+  C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\CapaDePresentacio.h(27,7):
+  see declaration of 'CapaDePresentacio'
+  
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\InepConsoleApp.cpp(134,12): error C2065: 'consult': undeclared identifier
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\InepConsoleApp.cpp(135,8): error C2065: 'consult': undeclared identifier
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\InepConsoleApp.cpp(138,13): error C2065: 'consult': undeclared identifier
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\InepConsoleApp.cpp(141,13): error C2065: 'consult': undeclared identifier
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\InepConsoleApp.cpp(144,13): error C2065: 'consult': undeclared identifier
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\InepConsoleApp.cpp(147,13): error C2065: 'consult': undeclared identifier
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\InepConsoleApp.cpp(150,13): error C2065: 'consult': undeclared identifier
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\InepConsoleApp.cpp(153,13): error C2065: 'consult': undeclared identifier
+C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp\InepConsoleApp.cpp(158,13): error C2065: 'consult': undeclared identifier

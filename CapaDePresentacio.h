@@ -48,6 +48,7 @@ class CapaDePresentacio {
         void consultarNovetatsVideojocs();
         void consultarPaquetVideojocs();
         void consultarPaquetsVideojocs();
+    
 };
 
 #endif
