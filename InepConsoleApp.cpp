@@ -1,8 +1,8 @@
 #include <iostream>
 #include <chrono>
 #include <ctime>
-#include <pqxx/pqxx>
 #include "CapaDePresentacio.h"
+#include <pqxx/pqxx>
 
 
 
@@ -70,7 +70,7 @@ int main() {
 				cin >> opt;
 				
 				if (opt == 1){
-					cdp->consultarUsuari();
+					cdp->consultaUsuari();
 				}
 				else if (opt == 2){
 					cdp->modificaUsuari();
@@ -130,7 +130,7 @@ int main() {
 				cout << "7. Tornar" << endl;
 				cout << "Opcio: ";
 
-				string consult;
+				int consult;
 				cin >> consult;
 				if(consult == 1){
 					cdp->consultarVideojoc();
