@@ -135,7 +135,66 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CapaDePresentacio.cpp" />
+    <ClCompile Include="CercadoraCompres.cpp" />
+    <ClCompile Include="CercadoraConte.cpp" />
+    <ClCompile Include="CercadoraElemCompra.cpp" />
+    <ClCompile Include="CercadoraUsuari.cpp" />
+    <ClCompile Include="CercadoraVideojoc.cpp" />
+    <ClCompile Include="CtrlModificaUsuari.cpp" />
     <ClCompile Include="InepConsoleApp.cpp" />
+    <ClCompile Include="PassarellaCompra.cpp" />
+    <ClCompile Include="PassarellaConte.cpp" />
+    <ClCompile Include="PassarellaElemCompra.cpp" />
+    <ClCompile Include="PassarellaUsuari.cpp" />
+    <ClCompile Include="PassarellaVideojoc.cpp" />
+    <ClCompile Include="TxComprarPaquet.cpp" />
+    <ClCompile Include="TxComprarVideojoc.cpp" />
+    <ClCompile Include="TxConsultaCompres.cpp" />
+    <ClCompile Include="TxConsultaNovetatsVideojocs.cpp" />
+    <ClCompile Include="TxConsultarPaquet.cpp" />
+    <ClCompile Include="TxConsultarPaquets.cpp" />
+    <ClCompile Include="TxConsultarVideojocsPerEdat.cpp" />
+    <ClCompile Include="TxConsultaUsuari.cpp" />
+    <ClCompile Include="TxConsultaVideojoc.cpp" />
+    <ClCompile Include="TxConsultaVideojocs.cpp" />
+    <ClCompile Include="TxEsborraUsuari.cpp" />
+    <ClCompile Include="TxInfoCompres.cpp" />
+    <ClCompile Include="TxIniciSessio.cpp" />
+    <ClCompile Include="TxRegistraUsuari.cpp" />
+    <ClCompile Include="TxTancaSessio.cpp" />
+    <ClCompile Include="Videoconsola.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CapaDePresentacio.h" />
+    <ClInclude Include="CercadoraCompres.h" />
+    <ClInclude Include="CercadoraConte.h" />
+    <ClInclude Include="CercadoraElemCompra.h" />
+    <ClInclude Include="CercadoraUsuari.h" />
+    <ClInclude Include="CercadoraVideojoc.h" />
+    <ClInclude Include="CtrlModificaUsuari.h" />
+    <ClInclude Include="PassarellaCompra.h" />
+    <ClInclude Include="PassarellaConte.h" />
+    <ClInclude Include="PassarellaElemCompra.h" />
+    <ClInclude Include="PassarellaUsuari.h" />
+    <ClInclude Include="PassarellaVideojoc.h" />
+    <ClInclude Include="Structs.h" />
+    <ClInclude Include="TxComprarPaquet.h" />
+    <ClInclude Include="TxComprarVideojoc.h" />
+    <ClInclude Include="TxConsultaCompres.h" />
+    <ClInclude Include="TxConsultaNovetatsVideojocs.h" />
+    <ClInclude Include="TxConsultarPaquet.h" />
+    <ClInclude Include="TxConsultarPaquets.h" />
+    <ClInclude Include="TxConsultarVideojocsPerEdat.h" />
+    <ClInclude Include="TxConsultaUsuari.h" />
+    <ClInclude Include="TxConsultaVideojoc.h" />
+    <ClInclude Include="TxConsultaVideojocs.h" />
+    <ClInclude Include="TxEsborraUsuari.h" />
+    <ClInclude Include="TxInfoCompres.h" />
+    <ClInclude Include="TxIniciSessio.h" />
+    <ClInclude Include="TxRegistraUsuari.h" />
+    <ClInclude Include="TxTancaSessio.h" />
+    <ClInclude Include="Videoconsola.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

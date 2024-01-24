@@ -1,18 +1,18 @@
 #ifndef TX_INFO_COMPRES_H
 #define TX_INFO_COMPRES_H
-
 #include <iostream>
+#include <vector>
 using namespace std;
 
 class TxInfoCompres{
     private:
-        string* resultat;
+        vector<string> resultat;
         
     public:
         TxInfoCompres();
 
         void executar();
-        string* obteResultat();
+        vector<string> obteResultat();
 };
 
 #endif

@@ -19,8 +19,8 @@ pair< vector<InfoPaq> ,vector<InfoVid> >  TxConsultaCompres::obteResultat()
 
 void TxConsultaCompres::executar()
 {
-    Videoconsola* v = Videoconsola::getInstance();
-    PassarellaUsuari u = v->obteUsuari().value();
+    Videoconsola& v = Videoconsola::getInstance();
+    PassarellaUsuari u = v.obteUsuari().value();
 
     CercadoraCompres cc;
     

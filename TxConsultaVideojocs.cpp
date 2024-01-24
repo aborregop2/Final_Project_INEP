@@ -1,4 +1,5 @@
-#include "TxConsultaViodeojocs.h"
+#include "TxConsultaVideojocs.h"
+#include "CercadoraVideojoc.h"
  
 TxConsultaVideojocs:: TxConsultaVideojocs()
 {

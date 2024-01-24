@@ -2,6 +2,7 @@
 #define CERCADORA_USUARI_H
 
 #include <iostream>
+#include <vector>
 #include "PassarellaUsuari.h"
 
 using namespace std;

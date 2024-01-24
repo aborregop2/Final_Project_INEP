@@ -13,6 +13,7 @@ class PassarellaVideojoc{
         string genere;
 
     public:
+        PassarellaVideojoc();
         PassarellaVideojoc(string nomV, int qeV, string dL, int minV, string gV);
         
         string obteNom();
@@ -20,6 +21,12 @@ class PassarellaVideojoc{
         string obteDataLlansament();
         int obteMinsEstimat();
         string obteGenere();
+
+        void modifyNom(string Nom);
+        void modifyQualificacioEdat(int Qe);
+        void modifyDataLlansament(string Dl);
+        void modifyMinsEstimat(int Me);
+        void modifyGenere(string Ge);
 };
 
 

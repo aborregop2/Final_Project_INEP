@@ -9,14 +9,21 @@ class PassarellaCompra{
         string usuari;
         string element;
         string data;
+        string preu_pagat;
 
     public:
-        PassarellaCompra(string u, string el, string d);
+        PassarellaCompra();
+        PassarellaCompra(string u, string el, string d, string preupagat);
 
         string obteUsuari();
         string obteElementCompra();
         string obteData();
         void insereix();
+
+        void modifyUsuari(string us);
+        void modifyElement(string elem);
+        void modifyData(string dat);
+        bool existeix();
 };
 
 

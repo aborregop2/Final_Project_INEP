@@ -8,6 +8,6 @@ TxTancaSessio::TxTancaSessio()
 
 void TxTancaSessio::executar()
 {
-    Videoconsola* v = Videoconsola::getInstance();
-    v->tancaSessio();
+    Videoconsola& v = Videoconsola::getInstance();
+    v.tancaSessio();
 }

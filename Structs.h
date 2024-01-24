@@ -18,8 +18,11 @@ struct InfoPaq{
     string descPaq;
     string preuPaq;
     string dataPaq;
-    int estalvi;
+    float estalvi;
     vector<InfoVid> res;
 };
+
+
+
 
 #endif

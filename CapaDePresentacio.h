@@ -23,17 +23,27 @@
 #include "TxConsultarPaquets.h"
 #include "Structs.h"
 
-
 using namespace std;
 
 class CapaDePresentacio {
     private:
-    static CapaDePresentacio* instance;
+        //static CapaDePresentacio* instance;
         CapaDePresentacio();
 
     public:
-        static CapaDePresentacio* getInstance();
+        //static CapaDePresentacio* getInstance();
+        /*Implementació de instància com en El fitxer de provaOO*/
 
+        //////////////////////////////////
+
+        static CapaDePresentacio& getInstance() {
+            static CapaDePresentacio instance;
+            return instance; 
+        }
+
+        /////////////////////////////////
+        
+        /** - USER CASES - **/
         void iniciSessio();
         void tancaSessio();
         void registrarUsuari();
@@ -42,6 +52,7 @@ class CapaDePresentacio {
         void esborraUsuari();
         void comprarVideojoc();
         
+        /** - VIDEOGAME CASES - **/
         void comprarPaquetVideojocs();
         void consultaCompres();
         void consultarVideojoc();

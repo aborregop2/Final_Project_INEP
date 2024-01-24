@@ -6,7 +6,7 @@ TxConsultaUsuari::TxConsultaUsuari()
 {
     
 }
-string* TxConsultaUsuari::obteResultat() 
+vector<string> TxConsultaUsuari::obteResultat() 
 { 
     return resultat;
 }    
@@ -18,17 +18,14 @@ PassarellaUsuari TxConsultaUsuari::obteUsuari()
 
 void TxConsultaUsuari::executar()
 {
-    Videoconsola* v = Videoconsola::getInstance();
-    PassarellaUsuari usu = v->obteUsuari().value();
-
-    string infoUsu[4];
-    infoUsu[0] = usu.obteNom();
-    infoUsu[1] = usu.obteSobrenom();
-    infoUsu[2] = usu.obteCorreuElectronic();
-    infoUsu[3] = usu.obteDataNaixament();
-
-    usuari = usu;
-    resultat = infoUsu;
+    Videoconsola& v = Videoconsola::getInstance();
+    PassarellaUsuari usu = v.obteUsuari().value();  
+   
+    resultat.push_back(usu.obteNom());
+    resultat.push_back(usu.obteSobrenom());
+    resultat.push_back(usu.obteCorreuElectronic());
+    resultat.push_back(usu.obteDataNaixament());
+  
 }
 
 

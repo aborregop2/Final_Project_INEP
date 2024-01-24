@@ -5,13 +5,11 @@ Videoconsola::Videoconsola()
 
 }
 
-typename Videoconsola::Videoconsola* Videoconsola::getInstance()
-{
-    if (instance == nullptr){
-        instance = new Videoconsola();
-    }
+Videoconsola& Videoconsola::getInstance() {
+    static Videoconsola instance;
     return instance;
 }
+
 
 optional<PassarellaUsuari> Videoconsola::obteUsuari()
 {
@@ -27,4 +25,12 @@ void Videoconsola::iniciaSessio(PassarellaUsuari u)
 void Videoconsola::tancaSessio()
 {
     usuari = nullopt;
+}
+
+void Videoconsola::modifyUsuari(string nom, string contrasenya, string correu, string data)
+{
+    if(!nom.empty()) usuari.value().modifyNom(nom);
+    if(!contrasenya.empty()) usuari.value().modifyContrasenya(contrasenya);
+    if(!correu.empty()) usuari.value().modifyCorreuElectronic(correu);
+    if(!data.empty()) usuari.value().modifyDataNaixement(data);
 }

@@ -1,18 +1,15 @@
+#include "CapaDePresentacio.h"
 #include <iostream>
 #include <chrono>
 #include <ctime>
-#include "CapaDePresentacio.h"
 #include <pqxx/pqxx>
-
-
-
 
 using namespace std;
 using namespace pqxx;
 
 int main() {
-		CapaDePresentacio* cdp = CapaDePresentacio::getInstance();
-
+		//CapaDePresentacio* cdp = CapaDePresentacio::getInstance();
+		CapaDePresentacio& cdp = CapaDePresentacio::getInstance();
 		string nc;
 
 		while(true){
@@ -30,10 +27,18 @@ int main() {
 			cin >> opt;
 			
 			if (opt == 1){
-				cdp->iniciSessio();
+				cout << "Entro" << endl;
+				cdp.iniciSessio();
 			}
 			else if(opt == 2){ 
-				cdp->registrarUsuari();
+				try {
+					cdp.registrarUsuari();
+				}
+				catch (const exception& e) {
+					std::cerr << "Error: " << e.what() << std::endl;
+					return 1;
+				}
+				
 			}
 			else if (opt == 3){
 				break;
@@ -70,13 +75,13 @@ int main() {
 				cin >> opt;
 				
 				if (opt == 1){
-					cdp->consultaUsuari();
+					cdp.consultaUsuari();
 				}
 				else if (opt == 2){
-					cdp->modificaUsuari();
+					cdp.modificaUsuari();
 				}
 				else if (opt == 3){
-					cdp->esborraUsuari();
+					cdp.esborraUsuari();
 				}
 				else if (opt == 4){
 					goto menuPrincipal;
@@ -101,13 +106,13 @@ int main() {
 				cout << endl;
 				
 				if (opt == 1){
-					cdp->comprarVideojoc();
+					cdp.comprarVideojoc();
 				}
 				else if (opt == 2){
-					cdp->comprarPaquetVideojocs();
+					cdp.comprarPaquetVideojocs();
 				}
 				else if (opt == 3){
-					cdp->consultaCompres();
+					cdp.consultaCompres();
 				}
 				else if (opt == 4){
 					goto menuPrincipal;
@@ -133,22 +138,22 @@ int main() {
 				int consult;
 				cin >> consult;
 				if(consult == 1){
-					cdp->consultarVideojoc();
+					cdp.consultarVideojoc();
 				}
 				else if(consult == 2){
-					cdp->consultarVideojocs();
+					cdp.consultarVideojocs();
 				}
 				else if(consult == 3){
-					cdp->consultarVideojocsPerEdat();
+					cdp.consultarVideojocsPerEdat();
 				}
 				else if(consult == 4){
-					cdp->consultarNovetatsVideojocs();
+					cdp.consultarNovetatsVideojocs();
 				}
 				else if(consult == 5){
-					cdp->consultarPaquetVideojocs();	
+					cdp.consultarPaquetVideojocs();	
 				}
 				else if(consult == 6){
-					cdp->consultarPaquetsVideojocs();
+					cdp.consultarPaquetsVideojocs();
 				}
 				else if(consult == 7){
 					goto menuPrincipal;
@@ -165,7 +170,7 @@ int main() {
 				cin >> c;
 
 				if (c == "S") {
-					cdp->tancaSessio();
+					cdp.tancaSessio();
 
 					goto inici;
 				}

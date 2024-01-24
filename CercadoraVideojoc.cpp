@@ -1,122 +1,94 @@
 #include "CercadoraVideojoc.h"
-PassarellaVideojoc
+#include "PassarellaVideojoc.h"
 #include <pqxx/pqxx>
+#include <vector>
 
 CercadoraVideojoc::CercadoraVideojoc()
 {
 
 }
 
-vector<PassarellaVideojoc> CercadoraVideojocs::cercaVideojoc(string nomV) 
+vector<PassarellaVideojoc> CercadoraVideojoc::cercaVideojoc(string nomV) 
 {
-     try{
-        pqxx::connection conn("dbname =INEP user =postgres  password =018180 hostaddr =127.0.0.1 port =5432");
-        pqxx::work txn(conn);
-        pqxx::result r = txn.exec("SELECT nom, qualificacioEdat, dataLLansament, minsEstimat, genere FROM public.videojoc WHERE nom = '" + nomV + "'");
+    pqxx::connection conn("dbname =INEP user =postgres  password =018180 hostaddr =127.0.0.1 port =5432");
+    pqxx::work txn(conn);
+    pqxx::result r = txn.exec("SELECT nom, qualificacio_edat, data_llansament, mins_estimat, genere FROM public.videojoc WHERE nom = '" + nomV + "'");
         
-        vector<PassarellaVideojoc> pv;
-        for (pqxx::result::const_iterator row = r.begin(); row != r.end(); ++row) {
-            PasarellaVideojoc pvi;
-            pvi.nom = row["nom"].as<string>();
-            pvi.qualificacioEdat = row["qualificacioEdat"].as<string>();
-            pvi.dataLlansament = row["dataLLansament"].as<string>();
-            pvi.minsEstimat = row["minsEstimat"].as<string>();
-            pvi.genere = row["genere"].as<string>();
-            pv.push_back(pvi);
-        }
-        txn.commit();
-
-        return pv;
-
+    vector<PassarellaVideojoc> pv;
+    for (pqxx::result::const_iterator row = r.begin(); row != r.end(); ++row) {
+        PassarellaVideojoc pvi;
+        pvi.modifyNom(row["nom"].as<string>());
+        pvi.modifyQualificacioEdat(stoi(row["qualificacio_edat"].as<string>()));
+        pvi.modifyDataLlansament(row["data_llansament"].as<string>());
+        pvi.modifyMinsEstimat(stoi(row["mins_estimat"].as<string>()));
+        pvi.modifyGenere(row["genere"].as<string>());
+        pv.push_back(pvi);
     }
-    catch(const exception &e){
-        std::cerr << "Error: " << e.what() << std::endl;
- 		return 1;
-    } 
+    txn.commit();
+
+    return pv;
 
 }
 
-vector<PassarellaVideojoc> CercadoraVideojocs::cercaTotsVideojocs()
+vector<PassarellaVideojoc> CercadoraVideojoc::cercaTotsVideojocs()
 {
-    try{
         pqxx::connection conn("dbname =INEP user =postgres  password =018180 hostaddr =127.0.0.1 port =5432");
         pqxx::work txn(conn);
-        pqxx::result r = txn.exec("SELECT nom, qualificacioEdat, dataLLansament, minsEstimat, genere FROM public.videojoc");
+        pqxx::result r = txn.exec("SELECT nom, qualificacio_edat, data_llansament, mins_estimat, genere FROM public.videojoc");
         
         vector<PassarellaVideojoc> pv;
         for (pqxx::result::const_iterator row = r.begin(); row != r.end(); ++row) {
-            PasarellaVideojoc pvi;
-            pvi.nom = row["nom"].as<string>();
-            pvi.qualificacioEdat = row["qualificacioEdat"].as<string>();
-            pvi.dataLlansament = row["dataLLansament"].as<string>();
-            pvi.minsEstimat = row["minsEstimat"].as<string>();
-            pvi.genere = row["genere"].as<string>();
+            PassarellaVideojoc pvi;
+            pvi.modifyNom(row["nom"].as<string>());
+            pvi.modifyQualificacioEdat(stoi(row["qualificacio_edat"].as<string>()));
+            pvi.modifyDataLlansament(row["data_llansament"].as<string>());
+            pvi.modifyMinsEstimat(stoi(row["mins_estimat"].as<string>()));
+            pvi.modifyGenere(row["genere"].as<string>());
             pv.push_back(pvi);
         }
         txn.commit();
-
-        return pv;
-
-    }
-    catch(const exception &e){
-        std::cerr << "Error: " << e.what() << std::endl;
- 		return 1;
-    } 
+        return pv; 
 }
 
-vector<PassarellaVideojoc> CercadoraVideojocs::cercaVideojocsEdat(int edatV)
+vector<PassarellaVideojoc> CercadoraVideojoc::cercaVideojocsEdat(int edatV)
 {
-    try{
-        pqxx::connection conn("dbname =INEP user =postgres  password =018180 hostaddr =127.0.0.1 port =5432");
-        pqxx::work txn(conn);
-        pqxx::result r = txn.exec("SELECT nom, qualificacioEdat, dataLLansament, minsEstimat, genere FROM public.videojoc WHERE qualificacioEdat >= '" + edatV + "'");
-        
-        vector<PassarellaVideojoc> pv;
-        for (pqxx::result::const_iterator row = r.begin(); row != r.end(); ++row) {
-            PasarellaVideojoc pvi;
-            pvi.nom = row["nom"].as<string>();
-            pvi.qualificacioEdat = row["qualificacioEdat"].as<string>();
-            pvi.dataLlansament = row["dataLLansament"].as<string>();
-            pvi.minsEstimat = row["minsEstimat"].as<string>();
-            pvi.genere = row["genere"].as<string>();
-            pv.push_back(pvi);
-        }
-        txn.commit();
+    string stredatV = to_string(edatV);
+    pqxx::connection conn("dbname =INEP user =postgres  password =018180 hostaddr =127.0.0.1 port =5432");
+    pqxx::work txn(conn);
+    pqxx::result r = txn.exec("SELECT nom, qualificacio_edat, data_llansament, mins_estimat, genere FROM public.videojoc WHERE qualificacio_edat <= '"+ stredatV +"' ");
 
-        return pv;
-
+    vector<PassarellaVideojoc> pv;
+    for (pqxx::result::const_iterator row = r.begin(); row != r.end(); ++row) {
+        PassarellaVideojoc pvi;
+        pvi.modifyNom(row["nom"].as<string>());
+        pvi.modifyQualificacioEdat(stoi(row["qualificacio_edat"].as<string>()));
+        pvi.modifyDataLlansament(row["data_llansament"].as<string>());
+        pvi.modifyMinsEstimat(stoi(row["mins_estimat"].as<string>()));
+        pvi.modifyGenere(row["genere"].as<string>());
+        pv.push_back(pvi);
     }
-    catch(const exception &e){
-        std::cerr << "Error: " << e.what() << std::endl;
- 		return 1;
-    } 
+    txn.commit();
+    return pv;
 }
 
 vector<PassarellaVideojoc> CercadoraVideojoc::cercaVideojocsNovetat(string dataV)
 {
-    try{
+    
         pqxx::connection conn("dbname =INEP user =postgres  password =018180 hostaddr =127.0.0.1 port =5432");
         pqxx::work txn(conn);
-        pqxx::result r = txn.exec("SELECT nom, qualificacioEdat, dataLLansament, minsEstimat, genere FROM public.videojoc WHERE dataLLansament >= '" + dataV + "'");
+        pqxx::result r = txn.exec("SELECT nom, qualificacio_edat, data_llansament, mins_estimat, genere FROM public.videojoc WHERE data_llansament >= '" + dataV + "'");
         
         vector<PassarellaVideojoc> pv;
         for (pqxx::result::const_iterator row = r.begin(); row != r.end(); ++row) {
-            PasarellaVideojoc pvi;
-            pvi.nom = row["nom"].as<string>();
-            pvi.qualificacioEdat = row["qualificacioEdat"].as<string>();
-            pvi.dataLlansament = row["dataLLansament"].as<string>();
-            pvi.minsEstimat = row["minsEstimat"].as<string>();
-            pvi.genere = row["genere"].as<string>();
+            PassarellaVideojoc pvi;
+            pvi.modifyNom(row["nom"].as<string>());
+            pvi.modifyQualificacioEdat(stoi(row["qualificacio_edat"].as<string>()));
+            pvi.modifyDataLlansament(row["data_llansament"].as<string>());
+            pvi.modifyMinsEstimat(stoi(row["mins_estimat"].as<string>()));
+            pvi.modifyGenere(row["genere"].as<string>());
             pv.push_back(pvi);
         }
         txn.commit();
-
-        return pv;
-
-    }
-    catch(const exception &e){
-        std::cerr << "Error: " << e.what() << std::endl;
- 		return 1;
-    } 
+        return pv; 
 }
 

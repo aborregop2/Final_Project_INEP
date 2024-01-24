@@ -10,7 +10,7 @@ string PassarellaElemCompra::obteDescripcio()
     return descripcio;
 }
 
-float PassarellaElemCompra::obtePreu()
+string PassarellaElemCompra::obtePreu()
 {
     return preu;
 }
@@ -18,4 +18,21 @@ float PassarellaElemCompra::obtePreu()
 string PassarellaElemCompra::obteTipus()
 {
     return tipus;
+}
+
+void PassarellaElemCompra::modifyNom(string nomEc)
+{
+    nom = nomEc;
+}
+void PassarellaElemCompra::modifyDesc(string descEc)
+{
+    descripcio = descEc;
+}
+void PassarellaElemCompra::modifyPreu(string preuEc)
+{
+    preu = preuEc;
+}
+void PassarellaElemCompra::modifyTipus(string tipusEc)
+{
+    tipus = tipusEc;
 }

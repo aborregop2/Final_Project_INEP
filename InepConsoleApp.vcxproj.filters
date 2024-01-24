@@ -18,5 +18,178 @@
     <ClCompile Include="InepConsoleApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CapaDePresentacio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CercadoraCompres.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CercadoraConte.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CercadoraElemCompra.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CercadoraUsuari.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CercadoraVideojoc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CtrlModificaUsuari.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PassarellaCompra.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PassarellaConte.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PassarellaElemCompra.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PassarellaUsuari.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PassarellaVideojoc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxComprarPaquet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxComprarVideojoc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxConsultaCompres.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxConsultaNovetatsVideojocs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxConsultarPaquet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxConsultarPaquets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxConsultarVideojocsPerEdat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxConsultaUsuari.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxConsultaVideojoc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxConsultaVideojocs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxEsborraUsuari.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxInfoCompres.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxIniciSessio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxRegistraUsuari.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxTancaSessio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Videoconsola.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CapaDePresentacio.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CercadoraCompres.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CercadoraConte.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CercadoraElemCompra.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CercadoraUsuari.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CercadoraVideojoc.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CtrlModificaUsuari.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PassarellaCompra.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PassarellaConte.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PassarellaElemCompra.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PassarellaUsuari.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PassarellaVideojoc.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Structs.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxComprarPaquet.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxComprarVideojoc.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxConsultaCompres.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxConsultaNovetatsVideojocs.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxConsultarPaquet.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxConsultarPaquets.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxConsultarVideojocsPerEdat.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxConsultaUsuari.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxConsultaVideojoc.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxConsultaVideojocs.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxEsborraUsuari.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxInfoCompres.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxIniciSessio.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxRegistraUsuari.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxTancaSessio.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Videoconsola.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

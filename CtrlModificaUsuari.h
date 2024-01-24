@@ -3,6 +3,7 @@
 
 #include "PassarellaUsuari.h"
 #include <iostream>
+#include <vector>
 using namespace std;
 
 class CtrlModificaUsuari{
@@ -10,8 +11,8 @@ class CtrlModificaUsuari{
         PassarellaUsuari usuari;
     public:
         CtrlModificaUsuari();
-        string* consultaUsuari();
-        void modificaUsuari(string nomU, string contraU, string correuU, string neixU);
+        vector<string> consultaUsuari();
+        void modificaUsuari(string nomU, string sorbU, string contraU, string correuU, string neixU);
 };
 
 #endif

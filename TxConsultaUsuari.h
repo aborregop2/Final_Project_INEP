@@ -2,18 +2,19 @@
 #define TX_CONSULTA_USUARI_H
 #include "PassarellaUsuari.h"
 #include <iostream>
+#include <vector>
 using namespace std;
 
 class TxConsultaUsuari{
     private:
         PassarellaUsuari usuari;
-        string* resultat;
+        vector<string> resultat;
         
     public:
         TxConsultaUsuari();
 
         void executar();
-        string* obteResultat();
+        vector<string> obteResultat();
         PassarellaUsuari obteUsuari();
 };
 

@@ -1,6 +1,6 @@
 #include "CercadoraElemCompra.h"
 #include "PassarellaElemCompra.h"
-
+#include <vector>
 #include <pqxx/pqxx>
 
 CercadoraElemCompra::CercadoraElemCompra()
@@ -10,54 +10,40 @@ CercadoraElemCompra::CercadoraElemCompra()
 
 vector<PassarellaElemCompra> CercadoraElemCompra::cercaElement(string elem)
 {
-    try{
-        pqxx::connection conn("dbname =INEP user =postgres  password =018180 hostaddr =127.0.0.1 port =5432");
-        pqxx::work txn(conn);
-        pqxx::result r = txn.exec("SELECT nom, descripcio, preu, tipus FROM public.elementcompra WHERE nom = '" + elem + "'");
-        
-        vector<PassarellaElemCompra> ec;
-        for (pqxx::result::const_iterator row = r.begin(); row != r.end(); ++row) {
-            PassarellaElemCompra pec;
-            pec.nom = row["nom"].as<string>();
-            pec.descripcio = row["descripcio"].as<string>();
-            pec.preu = row["preu"].as<string>();
-            pec.tipus = row["tipus"].as<string>();
-            ec.push_back(pec);
-        }
-        txn.commit();
-
-        return ec;
-
+    pqxx::connection conn("dbname =INEP user =postgres  password =018180 hostaddr =127.0.0.1 port =5432");
+    pqxx::work txn(conn);
+    pqxx::result r = txn.exec("SELECT nom, descripcio, preu, tipus FROM public.element_compra WHERE nom = '" + elem + "'");
+    
+    vector<PassarellaElemCompra> ec;
+    for (pqxx::result::const_iterator row = r.begin(); row != r.end(); ++row) {
+        PassarellaElemCompra pec;
+        pec.modifyNom(row["nom"].as<string>());
+        pec.modifyDesc(row["descripcio"].as<string>());
+        pec.modifyPreu(row["preu"].as<string>());
+        pec.modifyTipus(row["tipus"].as<string>());
+        ec.push_back(pec);
     }
-    catch(const exception &e){
-        std::cerr << "Error: " << e.what() << std::endl;
- 		return 1;
-    } 
+    txn.commit();
+    return ec;
 }
 
 vector<PassarellaElemCompra> CercadoraElemCompra::cercaTotsPaquet()
 {
-    try{
-        pqxx::connection conn("dbname =INEP user =postgres  password =018180 hostaddr =127.0.0.1 port =5432");
-        pqxx::work txn(conn);
-        pqxx::result r = txn.exec("SELECT nom, descripcio, preu, tipus FROM public.elementcompra WHERE tipus = '" + paquet + "'");
+    pqxx::connection conn("dbname =INEP user =postgres  password =018180 hostaddr =127.0.0.1 port =5432");
+    pqxx::work txn(conn);
+    string paq = "paquet";
+    pqxx::result r = txn.exec("SELECT nom, descripcio, preu, tipus FROM public.element_compra WHERE tipus = '"+paq+"'");
         
-        vector<PassarellaElemCompra> ec;
-        for (pqxx::result::const_iterator row = r.begin(); row != r.end(); ++row) {
-            PassarellaElemCompra pec;
-            pec.nom = row["nom"].as<string>();
-            pec.descripcio = row["descripcio"].as<string>();
-            pec.preu = row["preu"].as<string>();
-            pec.tipus = row["tipus"].as<string>();
-            ec.push_back(pec);
-        }
-        txn.commit();
-
-        return ec;
-
+    vector<PassarellaElemCompra> ec;
+    for (pqxx::result::const_iterator row = r.begin(); row != r.end(); ++row) {
+        PassarellaElemCompra pec;
+        pec.modifyNom(row["nom"].as<string>());
+        pec.modifyDesc(row["descripcio"].as<string>());
+        pec.modifyPreu(row["preu"].as<string>());
+        pec.modifyTipus(row["tipus"].as<string>());
+        ec.push_back(pec);
     }
-    catch(const exception &e){
-        std::cerr << "Error: " << e.what() << std::endl;
- 		return 1;
-    } 
+    txn.commit();
+
+    return ec;
 }

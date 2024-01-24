@@ -15,10 +15,11 @@ struct InfoRel{
 class TxComprarVideojoc {
     private:
         string nom; 
+        string preu_pagat;
         vector<InfoRel> resultat; 
 
     public:
-        TxComprarVideojoc(std::string nomV);
+        TxComprarVideojoc(std::string nomV, string preu);
         void executar();
         vector<InfoRel> obteResultat();
 };
