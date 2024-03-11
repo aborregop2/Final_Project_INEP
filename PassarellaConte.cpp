@@ -21,14 +21,4 @@ string PassarellaConte::obteNomPaquet()
     return nomP;
 }
 
-void PassarellaConte::modifyNomPaq(string nompaq)
-{
-    nomP = nompaq;
-}
-
-void PassarellaConte::modifyNomVid(string nomvid)
-{
-    nomV = nomvid;
-}
-
 

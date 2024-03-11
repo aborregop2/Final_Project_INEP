@@ -15,11 +15,6 @@ class PassarellaElemCompra{
         string obteDescripcio();
         string obtePreu(); //float obtepreu()
         string obteTipus();
-        
-        void modifyNom(string nomEc);
-        void modifyDesc(string descEc);
-        void modifyPreu(string preuEc);
-        void modifyTipus(string tipusEc);
 };
 
 #endif

@@ -34,12 +34,6 @@ class PassarellaUsuari{
         void posaContrasenya(string contraU);
         void posaCorreuElectronic(string correuU);
         void posaDataNaixement(string neixU);
-        
-        void modifyNom(string Nom);
-        void modifySobreom(string Snom);
-        void modifyContrasenya(string Cont);
-        void modifyCorreuElectronic(string Ce);
-        void modifyDataNaixement(string Dnaix);
 };
 
 #endif

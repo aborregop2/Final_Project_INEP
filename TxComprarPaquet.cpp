@@ -1,4 +1,3 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include "TxComprarPaquet.h"
 #include "PassarellaCompra.h"
 #include "PassarellaConte.h"
@@ -25,9 +24,8 @@ void TxComprarPaquet::executar()
     CercadoraConte cp;
     CercadoraVideojoc cv;
     CercadoraElemCompra cc;
+
     vector<PassarellaElemCompra> pec = cc.cercaElement(nom);
-    string Errorpaq = "ERROR: No s'ha trobat el paquet que buscaves o ja ha estat comprat\n";
-    if (resultat.nomPaq == "") throw(Errorpaq);
     resultat.nomPaq = nom;
     resultat.descPaq = pec[0].obteDescripcio();
     resultat.preuPaq = pec[0].obtePreu();
@@ -53,7 +51,6 @@ void TxComprarPaquet::executar2() {
     Videoconsola& v = Videoconsola::getInstance();
     optional<PassarellaUsuari> u = v.obteUsuari();
     CercadoraConte cp;
-    CercadoraElemCompra cEM;
 
 
     /*
@@ -70,39 +67,20 @@ void TxComprarPaquet::executar2() {
     
     
     */
-    time_t tiempoActual = time(nullptr);
-    tm* FechaHora = localtime(&tiempoActual);
-    string dataavui;
-    string horamin;
-    dataavui += to_string(FechaHora->tm_mday);
-    dataavui += '/';
-    dataavui += to_string(FechaHora->tm_mon + 1);
-    dataavui += '/';
-    dataavui += to_string(FechaHora->tm_year + 1900);
-    horamin += to_string(FechaHora->tm_hour);
-    horamin += ':';
-    horamin += to_string(FechaHora->tm_min);
+    string dataavui = "10/01/2024";
     vector<PassarellaConte> videojocspaq = cp.cercaConteP(nom);
 
-    vector<PassarellaElemCompra> vec = cEM.cercaElement(nom);
-
-
     for(unsigned int i = 0; i < videojocspaq.size(); ++i){
-        PassarellaCompra pc(u.value().obteSobrenom(), videojocspaq[i].obteNomVideojoc(), dataavui, vec[0].obtePreu());
-        bool exist = pc.existeix();
-        if (exist != false) {
-            pc.insereix();
-        }
+        InfoVid auxv;
+        PassarellaCompra pc(u.value().obteNom(), videojocspaq[i].obteNomVideojoc(), dataavui);
+        pc.insereix();
     }
-    PassarellaCompra pcpaq(u.value().obteSobrenom(), nom, dataavui, vec[0].obtePreu());
-    pcpaq.insereix();
-
 }
 
 
-  
+    /*
      InfoPaq TxComprarPaquet::obteResultat(){
        return resultat;
    }
-    
+    */
    

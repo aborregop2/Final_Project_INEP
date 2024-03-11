@@ -10,17 +10,13 @@ TxIniciSessio::TxIniciSessio(string sU,string cU) : sobrenomU(sU), contrasenyaU(
 void TxIniciSessio::executar() 
 {
     CercadoraUsuari c;
-    vector<PassarellaUsuari> vu = c.cercaUsuari(sobrenomU); // Error aqui
+    vector<PassarellaUsuari> vu = c.cercaUsuari(sobrenomU);
+
     string contr = vu[0].obteContrasenya();
-    string sobr = vu[0].obteSobrenom();
-    if (contr != contrasenyaU or sobr == "") {
-        throw exception();
-        return;
-    }
-    else {
-        Videoconsola& v = Videoconsola::getInstance();
-        v.iniciaSessio(vu[0]);
+    if (contr != contrasenyaU) {
+        cerr << "Contrasenya Incorrecta" << endl;
     }
 
-    
+    Videoconsola& v = Videoconsola::getInstance();
+    v.iniciaSessio(vu[0]);
 }

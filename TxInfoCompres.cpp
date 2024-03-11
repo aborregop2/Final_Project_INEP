@@ -8,7 +8,7 @@
 #include <string>
 #include <iostream>
 
-TxInfoCompres::TxInfoCompres()
+TxInfoCompres::TxInfoCompres() : resultat(nullptr)
 {
 
 }
@@ -18,10 +18,13 @@ void TxInfoCompres::executar()
     Videoconsola& v = Videoconsola::getInstance();
     PassarellaUsuari u = v.obteUsuari().value();
     string sobrenomU = u.obteSobrenom();
+    
     CercadoraCompres CeCo;
-    vector<PassarellaCompra> compresU = CeCo.cercaCompra(sobrenomU); //Error
+    vector<PassarellaCompra> compresU = CeCo.cercaCompra(sobrenomU);
+
     float totalEuros = 0;
     int totalVideojocs = 0, totalPaquets = 0;
+    
     for(unsigned int i = 0; i < compresU.size(); ++i){
         string elem = compresU[i].obteElementCompra();
         CercadoraElemCompra CE;
@@ -33,13 +36,16 @@ void TxInfoCompres::executar()
         if (tipusE == "paquet") totalPaquets++;
         else if (tipusE == "videojoc") totalVideojocs++;
     }
+    string rest[3];
     
-    resultat.push_back(to_string(totalPaquets));  
-    resultat.push_back(to_string(totalVideojocs));
-    resultat.push_back(to_string(totalEuros));
+    rest[0] = to_string(totalPaquets);  //Potser¿? to_string(v.totalPaquets)
+    rest[1] = to_string(totalVideojocs);
+    rest[2] = to_string(totalEuros);
+
+    resultat = rest;    //Creo que esta mal
 }
 
-vector<string> TxInfoCompres::obteResultat()
+string* TxInfoCompres::obteResultat()
 {
     return resultat;
 }

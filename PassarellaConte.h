@@ -13,8 +13,6 @@ class PassarellaConte{
         PassarellaConte(string nomVideojoc, string nomPaquet);
         string obteNomVideojoc();
         string obteNomPaquet();
-        void modifyNomPaq(string nompaq);
-        void modifyNomVid(string nomvid);
 };
 
 

@@ -1,8 +1,6 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include "CapaDePresentacio.h"
 #include <chrono>
 #include <string>
-#include <limits>
 
 
 CapaDePresentacio::CapaDePresentacio()
@@ -40,6 +38,7 @@ void CapaDePresentacio::iniciSessio()
     txIS.executar();
     //sI UsuariNoExisteix o ErrorContrasenya
     // -> "Hi ha hagut error amb el sobrenom o la contrasenya"
+    cout << "Sessio iniciada correctament!" << endl << endl;
 }
 
 void CapaDePresentacio::tancaSessio()
@@ -55,55 +54,54 @@ void CapaDePresentacio::consultaUsuari()
 {
     TxConsultaUsuari txCU;
     txCU.executar();
-    vector<string> infoUsuari = txCU.obteResultat();
-    cout << "\n";
+    string* infoUsuari = txCU.obteResultat();
+
+    TxInfoCompres txIC;
+    txIC.executar();
+    string* infoCompres = txIC.obteResultat();
+
+
     cout << "** Consulta usuari **" << endl;
     cout << "Nom complet: " << infoUsuari[0] << endl;
     cout << "Sobrenom: " << infoUsuari[1] << endl;
     cout << "Correu electronic: " << infoUsuari[2] << endl;
     cout << "Data naixement (DD/MM/AAAA): " << infoUsuari[3] << endl << endl;
-    TxInfoCompres txIC;
-    txIC.executar();     
-    vector<string> infoCompres = txIC.obteResultat();
-
-
-   
 
     cout << infoCompres[1] <<" videojocs comprats" << endl;
     cout << infoCompres[0] <<" paquet de videojocs comprats" << endl;
-    cout << infoCompres[2] << " euros gastats en total" << endl << endl;;
-
+    cout << infoCompres[2] <<" euros gastats en total" << endl;
 }
 
 void CapaDePresentacio::modificaUsuari()
 {
     string nomU, contraU, correuU, neixU;
     CtrlModificaUsuari cmU;
-    vector<string> infoU = cmU.consultaUsuari();
-    cout << "\n";
+    string* infoU = cmU.consultaUsuari();
+
     cout << "** Consulta usuari **" << endl;
     cout << "Nom complet: " << infoU[0] << endl;
     cout << "Sobrenom: " << infoU[1] << endl;
     cout << "Correu electronic: " << infoU[2] << endl;
     cout << "Data naixement (DD/MM/AAAA): " << infoU[3] << endl << endl;
 
+    //cin >> c; //Intro
 
     cout << "Omplir la informacio que es vol modificar ..." << endl;
     cout << "Nom complet: ";
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    getline(cin, nomU);
+    cin >> nomU;	//Getline()
     cout << "Contrasenya: ";
-    getline(cin, contraU);
+    cin >> contraU;
     cout << "Correu electronic: ";
-    getline(cin, correuU);
+    cin >> correuU;
     cout << "Data naixement (DD/MM/AAAA): ";
-    getline(cin, neixU);
+    cin >> neixU;
 
-    cmU.modificaUsuari(nomU, infoU[1], contraU, correuU, neixU);
+    cmU.modificaUsuari(nomU, contraU, correuU, neixU);
 
-    CtrlModificaUsuari cmUs;
-    vector<string> infoUs = cmUs.consultaUsuari();
-    cout << "\n";
+    //Pasan cosas char c
+    //cin >> c; //Intro
+
+    string *infoUs = cmU.consultaUsuari();
     cout << "** Dades usuari modificades **" << endl;
     cout << "Nom complet: " << infoUs[0] << endl;
     cout << "Sobrenom: " << infoUs[1] << endl;
@@ -132,17 +130,11 @@ void CapaDePresentacio::comprarVideojoc()
 
     cout << "** Compra videojoc **" << endl;
     cout << "Nom videojoc: ";
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    getline(cin, nomV);
+    cin >> nomV;
 
     TxConsultaVideojoc txCV(nomV);
-    try {
-     txCV.executar();
-    }
-    catch (string& e) {
-        throw(e);
-    }
-    vector<string> infoVideojoc = txCV.obteResultat();
+    txCV.executar();
+    string* infoVideojoc = txCV.obteResultat();
 
 
     cout << endl << "Informacio videojoc ..." << endl;
@@ -158,28 +150,26 @@ void CapaDePresentacio::comprarVideojoc()
 
     if (c == "S") {
 
+        // Obtener el reloj actual del sistema
+        auto ahora = std::chrono::system_clock::now();
 
-        TxComprarVideojoc txCV(nomV, infoVideojoc[6]);
-        try {
-            txCV.executar();
-        }
-        catch (string& e) {
-            throw(e);
-        }
+        // Convertir el tiempo en un formato legible
+        std::time_t tiempoActual = std::chrono::system_clock::to_time_t(ahora);
 
-        time_t tiempoActual = time(nullptr);
-        tm* FechaHora = localtime(&tiempoActual);
-        string dataavui;
-        string horamin;
-        dataavui += to_string(FechaHora->tm_mday);
-        dataavui += '/';
-        dataavui += to_string(FechaHora->tm_mon + 1);
-        dataavui += '/';
-        dataavui += to_string(FechaHora->tm_year + 1900);
-        horamin += to_string(FechaHora->tm_hour);
-        horamin += ':';
-        horamin += to_string(FechaHora->tm_min);
-        cout << "Compra registrada: " << dataavui << " " << horamin << endl;
+        // Obtener la estructura de tiempo local de manera segura con ctime_s
+        std::tm tiempoLocal{};
+
+
+        // Imprimir la fecha y hora actual
+
+        TxComprarVideojoc txCV(nomV);
+        txCV.executar();
+
+
+            // Imprimir día, mes y año actual
+        std::cout << "Compra Registrada: " << tiempoLocal.tm_mday << "/" << tiempoLocal.tm_mon + 1 << "/" << tiempoLocal.tm_year + 1900 << std::endl;
+
+        //cout << "Compra registrada: " << local_tm.tm_mday <<'/' << (local_tm.tm_mon + 1) << '/' << (local_tm.tm_year + 1900) << endl;
         cout << "Jocs relacionats:" << endl;
         vector<InfoRel> res = txCV.obteResultat();
         for(unsigned int i = 0; i < res.size(); ++i){
@@ -192,33 +182,25 @@ void CapaDePresentacio::comprarVideojoc()
 
 void CapaDePresentacio::comprarPaquetVideojocs()
 {
-    /*
-    auto now = std::chrono::system_clock::now();
+
+     auto now = std::chrono::system_clock::now();
     std::time_t now_time = std::chrono::system_clock::to_time_t(now);
     std::tm local_tm = *std::localtime(&now_time);
     std::string dataavui = to_string(local_tm.tm_mday) + '/' + to_string((local_tm.tm_mon + 1)) + '/' + to_string((local_tm.tm_year + 1900));
     std::string hora_minuts = std::to_string(local_tm.tm_hour) + ':' + std::to_string(local_tm.tm_min);
-    */
-     
 
     string nomP, c;
     cout << "** Compra paquet **" << endl;
     cout << "Nom paquet: ";
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    getline(cin, nomP);
+    cin >> nomP;
 
     TxComprarPaquet tCP(nomP);
-    try {
-       tCP.executar();
-    }
-    catch (string& err) {
-        throw(err);
-    }
+    tCP.executar();
 
-    InfoPaq inf = tCP.obteResultat();
+    InfoPaq inf;
     cout << endl << "Informacio paquet ..." << endl;
     cout << "Nom paquet: " << inf.nomPaq << endl;
-    cout << "Descripcio: " << inf.descPaq<< endl;
+    cout << "Descripcio: " << inf.descPaq << endl;
     cout << "Preu: " << inf.preuPaq << endl << endl;
 
     for (unsigned int i = 0; i < inf.res.size(); ++i){
@@ -229,19 +211,7 @@ void CapaDePresentacio::comprarPaquetVideojocs()
     cin >> c;
     if (c == "S") {
         tCP.executar2();
-        time_t tiempoActual = time(nullptr);
-        tm* FechaHora = localtime(&tiempoActual);
-        string dataavui;
-        string horamin;
-        dataavui += to_string(FechaHora->tm_mday);
-        dataavui += '/';
-        dataavui += to_string(FechaHora->tm_mon + 1);
-        dataavui += '/';
-        dataavui += to_string(FechaHora->tm_year + 1900);
-        horamin += to_string(FechaHora->tm_hour);
-        horamin += ':';
-        horamin += to_string(FechaHora->tm_min);
-        cout << "Compra registrada: " << dataavui << " " << horamin << endl;
+        cout << "Compra registrada: " << dataavui << " " << hora_minuts << endl;
     }
 }
 
@@ -278,7 +248,7 @@ void CapaDePresentacio::consultarVideojoc()
 
     TxConsultaVideojoc txCV(nomV);
     txCV.executar();
-    vector<string> resultat = txCV.obteResultat();
+    string* resultat = txCV.obteResultat();
 
     CercadoraConte CCon;
     vector<PassarellaConte> vpc = CCon.cercaConteV(nomV);
@@ -288,7 +258,7 @@ void CapaDePresentacio::consultarVideojoc()
     cout << "Qualificacio edat: " << resultat[2] << endl;
     cout << "Genere: " << resultat[5] << endl;
     cout << "Data llansament: " << resultat[3] << endl;
-    cout << "Preu: " << resultat[6] << " euros" << endl;
+    cout << "Preu: " << resultat[6] << endl;
     cout << "Paquets on esta inclos: ";
     for(unsigned int i = 0; i < vpc.size(); ++i){
         cout << vpc[i].obteNomPaquet() << " ";
@@ -305,7 +275,7 @@ void CapaDePresentacio::consultarVideojocs()
     for(unsigned int i = 0; i < resultatnom.size(); ++i){
         TxConsultaVideojoc txCv(resultatnom[i]);
         txCv.executar();
-        vector<string> resultat = txCv.obteResultat();
+        string* resultat = txCv.obteResultat();
         CercadoraConte CCon;
         vector<PassarellaConte> vpc = CCon.cercaConteV(resultat[i]);
 
@@ -324,22 +294,22 @@ void CapaDePresentacio::consultarVideojocs()
 
 void CapaDePresentacio::consultarVideojocsPerEdat()
 {
-    cout << "** Consulta videojocs per edat **" << endl;
     int edat;
     cin >> edat;
-    cout << "Edat maxima (anys): " << edat << endl;
 
+    cout << "** Consulta videojocs per edat **" << endl;
+    cout << "Edat maxima (anys): " << edat;
 
     TxConsultarVideojocsPerEdat txCvpe(edat);
     txCvpe.executar();
     vector<string> resultatjocsedat = txCvpe.obteResultat();
 
-    cout << "** Consulta videojocs fins a " << edat << " anys **" << endl;
+    cout << "** Consulta videojocs fins a " << edat << "anys **" << endl;
 
     for(unsigned int i = 0; i< resultatjocsedat.size(); ++i){
         TxConsultaVideojoc txCv(resultatjocsedat[i]);
         txCv.executar();
-        vector<string> resultat = txCv.obteResultat();
+        string* resultat = txCv.obteResultat();
         CercadoraConte CCon;
         vector<PassarellaConte> vpc = CCon.cercaConteV(resultat[i]);
          cout << resultat[0] << "; " << resultat[1] << "; " << resultat[6] << " euros "<< "; " << resultat[2] << " PEGI " <<  "; ";
@@ -368,7 +338,7 @@ void CapaDePresentacio::consultarNovetatsVideojocs()
     for(unsigned int i = 0; i < resultatnovetatvideojocs.size(); ++i){
         TxConsultaVideojoc txCv(resultatnovetatvideojocs[i]);
         txCv.executar();
-        vector<string> resultat = txCv.obteResultat();
+        string* resultat = txCv.obteResultat();
         CercadoraConte CCon;
         vector<PassarellaConte> vpc = CCon.cercaConteV(resultat[i]);
          cout << resultat[0] << "; " << resultat[1] << "; " << resultat[6] << " euros "<< "; " << resultat[2] << " PEGI " <<  "; ";
@@ -386,7 +356,7 @@ void CapaDePresentacio::consultarNovetatsVideojocs()
 void CapaDePresentacio::consultarPaquetVideojocs()
 {
     cout <<"** Consulta paquet **" << endl;
-    cout <<"Nom paquet: ";
+    cout <<"Nom paquet: " << endl;
     string nomP;
     cin >> nomP;
     TxConsultarPaquet txCp(nomP);
@@ -399,7 +369,7 @@ void CapaDePresentacio::consultarPaquetVideojocs()
     cout << "Preu: " << resultatpaq.preuPaq << " euros (estalvi de " << resultatpaq.estalvi << " euros)" << endl << endl;
 
     cout <<"Jocs inclosos:" << endl;
-    for(unsigned int i = 0; i < resultatpaq.res.size(); ++i){
+    for(unsigned int i = 0; resultatpaq.res.size(); ++i){
         cout << "- " << resultatpaq.res[i].nomVid << "; " << resultatpaq.res[i].descVid << "; ";
         cout << resultatpaq.res[i].preuVid << " euros" <<endl;
     }
@@ -430,8 +400,7 @@ void CapaDePresentacio::registrarUsuari()
     cout << "** Registrar Usuari **" << endl;
     cout << "Omplir la informacio que es demana ..." << endl;
     cout << "Nom complet: ";
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    getline(cin, nU);
+    cin >> nU;
 
     cout << "Sobrenom: ";
     cin >> sU;
@@ -449,9 +418,9 @@ void CapaDePresentacio::registrarUsuari()
     TxRegistraUsuari txRU(nU, sU, cU, ceU, dnU);
     txRU.executar();
    
-    
     // Si el sobrenom o correu electronic ja es troba a la base dades 
     // sobrenom -> "Ja exiteix un usuari amb aquest sobrenom"
     // correu -> "Ja exiteix un usuari amb aquest correu electronic"
+    cout << "Usuari registrat amb exit" << endl << endl;
 
 }

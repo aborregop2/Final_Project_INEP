@@ -23,6 +23,9 @@
 #include "TxConsultarPaquets.h"
 #include "Structs.h"
 
+
+
+
 using namespace std;
 
 class CapaDePresentacio {

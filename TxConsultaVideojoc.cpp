@@ -13,7 +13,7 @@ TxConsultaVideojoc::TxConsultaVideojoc(string nomV) : nom(nomV)
 
 }
         
-vector<string> TxConsultaVideojoc::obteResultat()
+string* TxConsultaVideojoc::obteResultat()
 {
     return resultat;
 }
@@ -23,16 +23,14 @@ void TxConsultaVideojoc::executar()
 {
     CercadoraVideojoc cv;
     vector<PassarellaVideojoc> v = cv.cercaVideojoc(nom);
-    string Errorvid = "ERROR: No s'ha trobat el videojoc que buscaves\n";
-    if (v.empty()) throw(Errorvid);
     CercadoraElemCompra cec;
     vector<PassarellaElemCompra> vv = cec.cercaElement(nom);
 
-    resultat.push_back(v[0].obteNom());
-    resultat.push_back(vv[0].obteDescripcio());
-    resultat.push_back(to_string(v[0].obteQualifiacioEdat()));
-    resultat.push_back(v[0].obteDataLlansament());
-    resultat.push_back(to_string(v[0].obteMinsEstimat()));
-    resultat.push_back(v[0].obteGenere());
-    resultat.push_back(vv[0].obtePreu());
+    resultat[0] = v[0].obteNom();
+    resultat[1] = vv[0].obteDescripcio();
+    resultat[2] = to_string(v[0].obteQualifiacioEdat());
+    resultat[3] = v[0].obteDataLlansament();
+    resultat[4] = to_string(v[0].obteMinsEstimat());
+    resultat[5] = v[0].obteGenere();
+    resultat[6] = vv[0].obtePreu();
 }

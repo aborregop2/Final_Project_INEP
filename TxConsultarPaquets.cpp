@@ -15,9 +15,10 @@ void TxConsultarPaquets::executar()
     CercadoraElemCompra cEC;
     CercadoraConte cc;
     vector<PassarellaElemCompra> pe = cEC.cercaTotsPaquet();
+
     for (unsigned int i = 0; i < pe.size(); i++) {
         InfoPaq auxp;
-        auxp.nomPaq = pe[i].obteNom();
+        auxp.nomPaq = nom;
         auxp.descPaq = pe[i].obteDescripcio();
         auxp.preuPaq = pe[i].obtePreu();
         

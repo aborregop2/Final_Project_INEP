@@ -20,8 +20,6 @@ class Videoconsola {
 
         void iniciaSessio(PassarellaUsuari u);
         void tancaSessio();
-
-        void modifyUsuari(string nom, string contrasenya, string correu, string data);
 };
 
 #endif

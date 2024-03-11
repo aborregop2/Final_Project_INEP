@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{e285a21e-dc5e-43d0-82d4-f27b41ebc8bf}</ProjectGuid>
+    <RootNamespace>FinalProjectInep</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Program Files\PostgreSQL\16\bin;C:\Program Files\libpqxx\include;C:\Users\Shawn\source\repos\InepConsoleApp\InepConsoleApp</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Program Files\libpqxx\lib;C:\Program Files\PostgreSQL\16\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;libpq.lib;pqxx.lib;ws2_32.lib;wsock32.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\InepConsoleApp\InepConsoleApp\CapaDePresentacio.cpp" />
+    <ClCompile Include="..\..\InepConsoleApp\InepConsoleApp\CercadoraCompres.cpp" />
+    <ClCompile Include="..\..\InepConsoleApp\InepConsoleApp\CercadoraConte.cpp" />
+    <ClCompile Include="..\..\InepConsoleApp\InepConsoleApp\CercadoraElemCompra.cpp" />
+    <ClCompile Include="..\..\InepConsoleApp\InepConsoleApp\CercadoraUsuari.cpp" />
+    <ClCompile Include="..\..\InepConsoleApp\InepConsoleApp\CercadoraVideojoc.cpp" />
+    <ClCompile Include="..\..\InepConsoleApp\InepConsoleApp\CtrlModificaUsuari.cpp" />
+    <ClCompile Include="..\..\InepConsoleApp\InepConsoleApp\PassarellaCompra.cpp" />
+    <ClCompile Include="..\..\InepConsoleApp\InepConsoleApp\PassarellaConte.cpp" />
+    <ClCompile Include="..\..\InepConsoleApp\InepConsoleApp\PassarellaElemCompra.cpp" />
+    <ClCompile Include="..\..\InepConsoleApp\InepConsoleApp\PassarellaUsuari.cpp" />
+    <ClCompile Include="..\..\InepConsoleApp\InepConsoleApp\PassarellaVideojoc.cpp" />
+    <ClCompile Include="..\..\InepConsoleApp\InepConsoleApp\TxComprarPaquet.cpp" />
+    <ClCompile Include="..\..\InepConsoleApp\InepConsoleApp\TxComprarVideojoc.cpp" />
+    <ClCompile Include="..\..\InepConsoleApp\InepConsoleApp\TxConsultaCompres.cpp" />
+    <ClCompile Include="..\..\InepConsoleApp\InepConsoleApp\TxConsultaNovetatsVideojocs.cpp" />
+    <ClCompile Include="..\..\InepConsoleApp\InepConsoleApp\TxConsultarPaquet.cpp" />
+    <ClCompile Include="..\..\InepConsoleApp\InepConsoleApp\TxConsultarPaquets.cpp" />
+    <ClCompile Include="..\..\InepConsoleApp\InepConsoleApp\TxConsultarVideojocsPerEdat.cpp" />
+    <ClCompile Include="..\..\InepConsoleApp\InepConsoleApp\TxConsultaUsuari.cpp" />
+    <ClCompile Include="..\..\InepConsoleApp\InepConsoleApp\TxConsultaVideojoc.cpp" />
+    <ClCompile Include="..\..\InepConsoleApp\InepConsoleApp\TxConsultaVideojocs.cpp" />
+    <ClCompile Include="..\..\InepConsoleApp\InepConsoleApp\TxEsborraUsuari.cpp" />
+    <ClCompile Include="..\..\InepConsoleApp\InepConsoleApp\TxInfoCompres.cpp" />
+    <ClCompile Include="..\..\InepConsoleApp\InepConsoleApp\TxIniciSessio.cpp" />
+    <ClCompile Include="..\..\InepConsoleApp\InepConsoleApp\TxRegistraUsuari.cpp" />
+    <ClCompile Include="..\..\InepConsoleApp\InepConsoleApp\TxTancaSessio.cpp" />
+    <ClCompile Include="..\..\InepConsoleApp\InepConsoleApp\Videoconsola.cpp" />
+    <ClCompile Include="FinalProjectInep.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\InepConsoleApp\InepConsoleApp\CapaDePresentacio.h" />
+    <ClInclude Include="..\..\InepConsoleApp\InepConsoleApp\CercadoraCompres.h" />
+    <ClInclude Include="..\..\InepConsoleApp\InepConsoleApp\CercadoraConte.h" />
+    <ClInclude Include="..\..\InepConsoleApp\InepConsoleApp\CercadoraElemCompra.h" />
+    <ClInclude Include="..\..\InepConsoleApp\InepConsoleApp\CercadoraUsuari.h" />
+    <ClInclude Include="..\..\InepConsoleApp\InepConsoleApp\CercadoraVideojoc.h" />
+    <ClInclude Include="..\..\InepConsoleApp\InepConsoleApp\CtrlModificaUsuari.h" />
+    <ClInclude Include="..\..\InepConsoleApp\InepConsoleApp\PassarellaCompra.h" />
+    <ClInclude Include="..\..\InepConsoleApp\InepConsoleApp\PassarellaConte.h" />
+    <ClInclude Include="..\..\InepConsoleApp\InepConsoleApp\PassarellaElemCompra.h" />
+    <ClInclude Include="..\..\InepConsoleApp\InepConsoleApp\PassarellaUsuari.h" />
+    <ClInclude Include="..\..\InepConsoleApp\InepConsoleApp\PassarellaVideojoc.h" />
+    <ClInclude Include="..\..\InepConsoleApp\InepConsoleApp\Structs.h" />
+    <ClInclude Include="..\..\InepConsoleApp\InepConsoleApp\TxComprarPaquet.h" />
+    <ClInclude Include="..\..\InepConsoleApp\InepConsoleApp\TxComprarVideojoc.h" />
+    <ClInclude Include="..\..\InepConsoleApp\InepConsoleApp\TxConsultaCompres.h" />
+    <ClInclude Include="..\..\InepConsoleApp\InepConsoleApp\TxConsultaNovetatsVideojocs.h" />
+    <ClInclude Include="..\..\InepConsoleApp\InepConsoleApp\TxConsultarPaquet.h" />
+    <ClInclude Include="..\..\InepConsoleApp\InepConsoleApp\TxConsultarPaquets.h" />
+    <ClInclude Include="..\..\InepConsoleApp\InepConsoleApp\TxConsultarVideojocsPerEdat.h" />
+    <ClInclude Include="..\..\InepConsoleApp\InepConsoleApp\TxConsultaUsuari.h" />
+    <ClInclude Include="..\..\InepConsoleApp\InepConsoleApp\TxConsultaVideojoc.h" />
+    <ClInclude Include="..\..\InepConsoleApp\InepConsoleApp\TxConsultaVideojocs.h" />
+    <ClInclude Include="..\..\InepConsoleApp\InepConsoleApp\TxEsborraUsuari.h" />
+    <ClInclude Include="..\..\InepConsoleApp\InepConsoleApp\TxInfoCompres.h" />
+    <ClInclude Include="..\..\InepConsoleApp\InepConsoleApp\TxIniciSessio.h" />
+    <ClInclude Include="..\..\InepConsoleApp\InepConsoleApp\TxRegistraUsuari.h" />
+    <ClInclude Include="..\..\InepConsoleApp\InepConsoleApp\TxTancaSessio.h" />
+    <ClInclude Include="..\..\InepConsoleApp\InepConsoleApp\Videoconsola.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
